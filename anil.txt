@@ -1,0 +1,1407 @@
+<div class="row p-b-20">
+   <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+      <h2> Paint Thickness </h2>
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+            <label for="porte" class="form-label"> Gate </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" [(ngModel)]="ptGate" placeholder=" Enter ptGate"
+               class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">  
+         </div>
+      </div>
+      
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="ailes" class="form-label"> wings </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" [(ngModel)]="ptWings" placeholder=" Enter ptWings"
+               class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+         </div>
+      </div>
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="capot" class="form-label"> Hood </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" type="text" [(ngModel)]="ptHood" placeholder=" Enter ptHood"
+               class="rounded-inputs20 select-select col-md-3" name="capot" style="vertical-align: inherit;">
+         </div>
+      </div>
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="toit" class="form-label"> Roof </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" type="text" [(ngModel)]="ptRoof" placeholder=" Enter ptRoof"
+               class="rounded-inputs20 select-select col-md-3" name="toit" style="vertical-align: inherit;">
+         </div>
+      </div>
+   </div>
+
+   <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+      <h2> Repainted bodywork </h2>
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="porte" class="form-label"> Gate </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbGate" placeholder=" Enter rbGate" name="porte"
+               class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+         </div>
+      </div>
+
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="ailes" class="form-label"> wings </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" [(ngModel)]="rbWings" type="text" placeholder=" Enter rbWings"
+               class="rounded-inputs20 select-select col-md-3" name="ailes" style="vertical-align: inherit;">
+         </div>
+      </div>
+
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="capot" class="form-label"> Hood </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbHood" placeholder=" Enter rbHood" name="capot"
+               class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+         </div>
+      </div>
+
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+            <label for="toit" class="form-label"> Roof </label>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbRoof" placeholder=" Enter rbRoof" name="toit"
+               class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+         </div>
+      </div>
+
+   </div>
+</div>
+
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="row">
+
+         </div>
+      </div>
+      <div class="card main-title">
+         <div class="col-md-12">
+
+         </div>
+      </div>
+   </div>
+</div>
+<div *ngIf="title">
+   <div class="col-12">
+
+      <h2 class="col-12">
+
+         Place an ad
+
+      </h2>
+
+      <div class="col-12">
+         <span>
+            What is the title of the ad?
+         </span>
+
+         <span style="color: red;">
+            *
+         </span>
+         <span style="float: right;">
+            Required field
+         </span>
+      </div>
+      <br>
+
+      <div class="col-12">
+         <span style="color:red">
+            <input [class.form-control]="'formControl'" style="width: 94%; height: 20;" [(ngModel)]="titleany">
+            <span style=" float:right">
+               <button type="button" class="btn btn-danger"
+                  style="background-color: #ff0000;color: #ffffff;border: 1px solid #ff0000;"
+                  [disabled]="titleany.length < 3" (click)="titlef()">Continue</button>
+            </span>
+         </span>
+      </div>
+
+   </div>
+</div>
+
+<div *ngIf="choose_a_suggest_category">
+   <div class="col-12">
+      <br>
+      <span>
+         Choose a suggested category
+         <br>
+      </span>
+      <br>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="porchsecar" name="cars" [(ngModel)]="cars"> &nbsp; Porsche Cars
+      </div>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Accessories" name="cars" [(ngModel)]="cars">&nbsp; Parts and Accessories
+      </div>
+      <br>
+      <div class="col-12">
+         <span style="float: right">
+            <button type="button" class="btn btn-danger" (click)="choose_a_suggest_categoryf()"
+               [disabled]="cars.length < 1">Continue</button>
+         </span>
+
+      </div>
+   </div>
+</div>
+
+<div *ngIf="criteria">
+   criteria
+   <!-- -----------------------Model & SubModel Starts Here ----------------------- -->
+   <div class=" row col-12">
+
+      <div class="col-md-6">
+         <label>Model</label>
+         <span style="float: right;">* Required Field</span>
+         <div style="width: 400%;">
+            <select [(ngModel)]="Modelvalue" name="city" class="rounded-inputs20 select-select col-md-3"
+               style="vertical-align: inherit;">
+               <option value="0">Select</option>
+               <option *ngFor="let Model1 of Model" value="{{Model1.id}}">{{Model1.name}}</option>
+            </select>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <label>SubModel</label>
+         <span style="float: right;">* Required Field</span>
+         <div style="width: 400%;">
+            <select [(ngModel)]="SubModelvalue" name="city" class="rounded-inputs20 select-select col-md-3"
+               style="vertical-align: inherit;">
+               <option value="0">Select</option>
+               <option *ngFor="let SubModel1 of SubModel" value="{{SubModel1.id}}">{{SubModel1.name}}</option>
+            </select>
+         </div>
+      </div>
+
+   </div>
+
+   <br>
+   <!-- -----------------------Model & SubModel Ends Here ----------------------- -->
+
+
+   <!-- ---------------------------------year and room------------------------- -->
+   <div class=" row col-12">
+
+      <div class="col-md-6">
+         <label>Year</label>
+         <span style="float: right;">* Required Field</span>
+         <div style="width: 100%;">
+            <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="input" placeholder="year" [(ngModel)]="year">
+         </div>
+      </div>
+      <div class="col-md-6">
+         <label>Room</label>
+         <span style="float: right;">* Required Field</span>
+         <div style="width: 400%;">
+            <select name="city" class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               <option *ngFor="let Room1 of Room" [value]="Room1.id">{{Room1.name}}</option>
+            </select>
+         </div>
+      </div>
+
+   </div>
+   <!-- ---------------------------------year and room------------------------- -->
+
+
+
+   <div class="row p-b-20">
+      <!-- ---------------------------------Fuel------------------------- -->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+         <label for="modèle" class="form-label">Fuel
+            <span class="champ-r">Required field</span></label>
+         <div class="containerrr">
+            <div class="selector">
+               <div class="selecotr-item">
+                  <input [class.form-control]="'formControl'" type="radio" id="radio11" name="selector" class="selector-item_radio" checked=""
+                     value="Essence" [(ngModel)]="Fuel">
+                  <label for="radio11" class="selector-item_label"> Essence </label>
+               </div>
+               <div class="selecotr-item">
+                  <input [class.form-control]="'formControl'" type="radio" id="radio22" name="selector" class="selector-item_radio" value="Diesel"
+                     [(ngModel)]="Fuel">
+                  <label for="radio22" class="selector-item_label"> Diesel </label>
+               </div>
+               <div class="selecotr-item">
+                  <input [class.form-control]="'formControl'" type="radio" id="radio33" name="selector" class="selector-item_radio" value="Electric"
+                     [(ngModel)]="Fuel">
+                  <label for="radio33" class="selector-item_label"> Electric </label>
+               </div>
+               <div class="selecotr-item">
+                  <input [class.form-control]="'formControl'" type="radio" id="radio44" name="selector" class="selector-item_radio" value="Hybrid"
+                     [(ngModel)]="Fuel">
+                  <label for="radio44" class="selector-item_label"> Hybrid </label>
+               </div>
+            </div>
+         </div>
+
+      </div>
+      <!-- ---------------------------------Fuel------------------------- -->
+
+      <!-- ---------------------------------Gear------------------------- -->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+         <label for="modèle" class="form-label"> Gearbox </label>
+         <span class="champ-r"> Required field </span>
+         <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+               <div>
+                  <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radi1" value="manual" name="opt"
+                     [(ngModel)]="Gearbox">
+                  &nbsp;Manual
+                  <label class="form-check-label" for="manuel"></label>
+               </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+               <div>
+                  <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radi2" value="Automatique" name="opt"
+                     [(ngModel)]="Gearbox"> &nbsp;Automatique
+                  <label class="form-check-label" for="automatique"></label>
+               </div>
+            </div>
+         </div><br>
+         <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+               <div>
+                  <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio3" value="Tiptronic" name="opt"
+                     [(ngModel)]="Gearbox"> &nbsp;Tiptronic
+                  <label class="form-check-label" for="tiptronic"></label>
+               </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+               <div>
+                  <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio4" value="KDP" name="opt" [(ngModel)]="Gearbox">
+                  &nbsp; KDP
+                  <label class="form-check-label" for="PDK"></label>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- ---------------------------------Gear------------------------- -->
+
+   <div class="row p-b-20">
+      <!-- ---------------------------------Vichele------------------------- -->
+      <div class=" row col-12">
+
+         <div class="col-md-6">
+            <label>Vehicle condition</label>
+            <span style="float: right;">* Required Field</span>
+            <div style="width: 400%;">
+               <select [(ngModel)]="Vehiclecondition" name="city" class="rounded-inputs20 select-select col-md-3"
+                  style="vertical-align: inherit;">
+                  <option value="0">Select</option>
+                  <option *ngFor="let VCInput of Vehicleconditioninput" value="{{VCInput.id}}">{{VCInput.name}}</option>
+               </select>
+            </div>
+         </div>
+
+
+         <!-- ---------------------------------Vichele------------------------- -->
+
+         <!-- ---------------------------------Color------------------------- -->
+         <div class="col-md-6">
+            <label>Color</label>
+            <span class="champ-r"> Required field </span>
+            <div style="width: 400%;">
+               <select [(ngModel)]="color" name="city" class="rounded-inputs20 select-select col-md-3"
+                  style="vertical-align: inherit;">
+                  <option value="0">Select</option>
+                  <option *ngFor="let CInput of colors" value="{{CInput.id}}">{{CInput.name}}</option>
+               </select>
+            </div>
+         </div>
+
+      </div>
+      <!-- ---------------------------------Color------------------------- -->
+
+
+      <!-- ---------------------------------Number of months ------------------------- -->
+      <div class="row p-b-20">
+         <div class="col-md-6">
+            <label>Number of months</label>
+            <span style="float: right;">* Required Field</span>
+            <div style="width: 400%;">
+               <select name="city" class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+                  <option *ngFor="let Color1 of Numberofmonths" [value]="Color1">{{Color1}}</option>
+               </select>
+            </div>
+         </div>
+      </div>
+
+
+
+      <!-- ---------------------------------Number of months------------------------- -->
+
+
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Maintenance invoice </label><span class="champ-r"> Required field
+            </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio7" name="opt3" value="manuel" checked=""
+                        [(ngModel)]="Maintenanceinvoice"> Yes
+                     <label class="form-check-label" for="manuel"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio8" name="opt3" value="automatique"
+                        [(ngModel)]="Maintenanceinvoice"> Nope
+                     <label class="form-check-label" for="automatique"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Damaged </label>
+            <span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio5" name="opt4" value="Oui" checked=""
+                        [(ngModel)]="DamagedRequired"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio6" name="opt4" value="Non"
+                        [(ngModel)]="DamagedRequired"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- ======================= -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Warranty Approved------------------------- -->
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Warranty Approved
+
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio1" name="opt1" value="manuel" checked=""
+                        [(ngModel)]="WarrantyApproved"> Yes
+                     <label class="form-check-label" for="manuel"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio2" name="opt1" value="automatique"
+                        [(ngModel)]="WarrantyApproved"> Nope
+                     <label class="form-check-label" for="automatique"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ---------------------------------Warranty Approved------------------------- -->
+         <!-- ---------------------------------Service book ------------------------- -->
+
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Service book
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio5" name="opt2" value="Oui" checked=""
+                        [(ngModel)]="Servicebook"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio6" name="opt2" value="Non"
+                        [(ngModel)]="Servicebook"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ---------------------------------Service book ------------------------- -->
+      </div>
+      <!-- ======================= -->
+      <!-- ======================= -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Original Paint------------------------- -->
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Original paint
+
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="OPaint1" name="OPaints1" value="Oui" checked=""
+                        [(ngModel)]="Originalpaint"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="OPaint2" name="OPaints2" value="Non"
+                        [(ngModel)]="Originalpaint"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ---------------------------------Original Paint------------------------- -->
+         <!-- ---------------------------------Matching Number ------------------------- -->
+
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Matching number
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="MNumber1" name="MNumber01" value="Oui" checked=""
+                        [(ngModel)]="Matchingnumber"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="MNumber2" name="MNumber02" value="Non"
+                        [(ngModel)]="Matchingnumber"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ---------------------------------Matching Number ------------------------- -->
+      </div>
+      <!-- ======================= -->
+
+      <!-- ======================= -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Matching_color_paint------------------------- -->
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Matching color paint
+
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="MCP1" name="MCPpoint1" value="Oui" checked=""
+                        [(ngModel)]="Matching_color_paint"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="MCP2" name="MCPpoint2" value="Non"
+                        [(ngModel)]="Matching_color_paint"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ---------------------------------Matching_color_paint------------------------- -->
+         <!-- ---------------------------------Interior_color_matching------------------------- -->
+
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Interior color matching
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="ICM1" name="ICMatching1" value="Oui" checked=""
+                        [(ngModel)]="Interior_color_matching"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="ICM2" name="ICMatching2" value="Non"
+                        [(ngModel)]="Interior_color_matching"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ---------------------------------Interior_color_matching ------------------------- -->
+      </div>
+      <!-- ======================= -->
+      <!-- ======================= -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Prices_for_pros------------------------- -->
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Prices for pros
+
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="PFP1" name="PFPros1" value="Oui" checked=""
+                        [(ngModel)]="Prices_for_pros"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="PFP2" name="PFPros2" value="Non"
+                        [(ngModel)]="Prices_for_pros"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ---------------------------------Prices_for_pros------------------------- -->
+         <!-- ---------------------------------Deductible_VAT------------------------- -->
+
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <label for="modèle" class="form-label"> Deductible VAT
+            </label><span class="champ-r"> Required field </span>
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="DV1" name="DVat1" value="Oui" checked=""
+                        [(ngModel)]="Deductible_VAT"> Yes
+                     <label class="form-check-label" for="Oui"></label>
+                  </div>
+               </div>
+               <div class="col-6 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <div class="form-check">
+                     <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="DV2" name="DVat2" value="Non"
+                        [(ngModel)]="Deductible_VAT"> Nope
+                     <label class="form-check-label" for="Non"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ---------------------------------Deductible_VAT ------------------------- -->
+      </div>
+      <!-- ======================= -->
+
+      <!-- ======================= -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Numberofowners ------------------------- -->
+         <div class="col-md-6">
+            <label>Number of owners</label>
+            <span style="float: right;">* Required Field</span>
+            <div style="width: 400%;">
+               <input [class.form-control]="'formControl'" [(ngModel)]="Numberofowners" placeholder=" Enter Number of owners"
+                  class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+
+            </div>
+         </div>
+         <!-- ---------------------------------Numberofowners ------------------------- -->
+
+         <!-- ---------------------------------Displacement ------------------------- -->
+
+         <div class="col-md-6">
+            <label>Displacement</label>
+            <span style="float: right;">* Required Field</span>
+            <div style="width: 400%;">
+               <input [class.form-control]="'formControl'" [(ngModel)]="Displacement" placeholder=" Enter Displacement"
+                  class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+
+            </div>
+         </div>
+         <!-- ---------------------------------Displacement ------------------------- -->
+      </div>
+
+      <!-- ======================= -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Paint_Thickness ------------------------- -->
+         <div class="col-md-6">
+            <label>Paint Thickness</label>
+            <span style="float: right;">* Required Field</span>
+            <div style="width: 400%;">
+               <input [class.form-control]="'formControl'" [(ngModel)]="Paint_Thickness" placeholder=" Enter Paint_Thickness"
+                  class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+            </div>
+         </div>
+         <!-- ---------------------------------Paint_Thickness TextBox ------------------------- -->
+      </div>
+
+      <!-- ===============================      paint thickness=============================================== -->
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <h2> Paint Thickness </h2>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-6 mob-p0">
+                  <label for="porte" class="form-label"> Gate </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" [(ngModel)]="ptGate" placeholder=" Enter ptGate"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+            
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="ailes" class="form-label"> wings </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" [(ngModel)]="ptWings" placeholder=" Enter ptWings"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="capot" class="form-label"> Hood </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="ptHood" placeholder=" Enter ptHood"
+                     class="rounded-inputs20 select-select col-md-3" name="capot" style="vertical-align: inherit;">
+               </div>
+            </div>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="toit" class="form-label"> Roof </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="ptRoof" placeholder=" Enter ptRoof"
+                     class="rounded-inputs20 select-select col-md-3" name="toit" style="vertical-align: inherit;">
+               </div>
+            </div>
+         </div>
+
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <h2> Repainted bodywork </h2>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="porte" class="form-label"> Gate </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbGate" placeholder=" Enter rbGate" name="porte"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="ailes" class="form-label"> wings </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" [(ngModel)]="rbWings" type="text" placeholder=" Enter rbWings"
+                     class="rounded-inputs20 select-select col-md-3" name="ailes" style="vertical-align: inherit;">
+               </div>
+            </div>
+
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="capot" class="form-label"> Hood </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbHood" placeholder=" Enter rbHood" name="capot"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-4 mob-p0">
+                  <label for="toit" class="form-label"> Roof </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbRoof" placeholder=" Enter rbRoof" name="toit"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <!-- =================================== -->
+      <div class="row p-b-20">
+         <!-- ---------------------------------Total_engine_operating_hours_counter------------------------- -->
+         <div class="col-md-6">
+            <label>Total engine operating hours counter</label>
+            <span style="float: right;">* Required Field</span>
+            <div style="width: 400%;">
+               <input [class.form-control]="'formControl'" [(ngModel)]="Total_engine_operating_hours_counter"
+                  placeholder=" Enter Total_engine_operating_hours_counter"
+                  class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+            </div>
+         </div>
+         <!-- ---------------------------------Total_engine_operating_hours_counter------------------------- -->
+      </div>
+
+      <!-- =========================================================piwi-report Date and mileage of interviews put========== -->
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mob-p0">
+            <h2> piwi-report </h2>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-5 col-lg-5">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="">
+               </div>
+               <div class="col-6 col-sm-8 col-md-7 col-lg-7">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img" (click)="onSelectFile($event)" accept="image/*">
+                        <img src="../../assets/image.jpeg" width="18" height="18" class="fa-solid fa-images"></button>
+                     &nbsp;
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-5 col-lg-5">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="">
+               </div>
+               <div class="col-6 col-sm-8 col-md-7 col-lg-7">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" (change)="onSelectFile($event)"> <img
+                           src="../../assets/image.jpeg" width="18" height="18" class="fa-solid fa-images"></button>
+                     &nbsp;
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-5 col-lg-5">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="">
+               </div>
+               <div class="col-6 col-sm-8 col-md-7 col-lg-7">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                     &nbsp;
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-5 col-lg-5">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="">
+               </div>
+               <div class="col-6 col-sm-8 col-md-7 col-lg-7">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                     &nbsp;
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-5 col-lg-5">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="">
+               </div>
+               <div class="col-6 col-sm-8 col-md-7 col-lg-7">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                     &nbsp;
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-5 col-lg-5">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="">
+               </div>
+               <div class="col-6 col-sm-8 col-md-7 col-lg-7">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                     &nbsp;
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ===========================================piwi-report endsHere -->
+
+         <!-- ===========================================date satrts Here -->
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+            <h2> Date and mileage of interviews put </h2>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="date" class="form-control bg-white" id="d1" placeholder="" name="dat1"
+                     [(ngModel)]="Date1">
+               </div>
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="m1" placeholder="" name="mil1"
+                     [(ngModel)]="mileage_of_interviews1">
+               </div>
+               <div class="col-12 col-sm-4 col-md-4 col-lg-4 mob-pt-10">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div> &nbsp;
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="date" class="form-control bg-white" id="d2" placeholder="dat2" name=""
+                     [(ngModel)]="Date2">
+               </div>
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="m2" placeholder="" name="mil2"
+                     [(ngModel)]="mileage_of_interviews2">
+               </div>
+               <div class="col-12 col-sm-4 col-md-4 col-lg-4 mob-pt-10">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div> &nbsp;
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="date" class="form-control bg-white" id="d3" placeholder="" name="dat3"
+                     [(ngModel)]="Date3">
+               </div>
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="m3" placeholder="" name="mil3"
+                     [(ngModel)]="mileage_of_interviews3">
+               </div>
+               <div class="col-12 col-sm-4 col-md-4 col-lg-4 mob-pt-10">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div> &nbsp;
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="date" class="form-control bg-white" id="d4" placeholder="" name="dat4"
+                     [(ngModel)]="Date4">
+               </div>
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="m4" placeholder="" name="mil4"
+                     [(ngModel)]="mileage_of_interviews4">
+               </div>
+               <div class="col-12 col-sm-4 col-md-4 col-lg-4 mob-pt-10">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div> &nbsp;
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div>
+               </div>
+            </div><br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="date" class="form-control bg-white" id="d5" placeholder="" name="dat5"
+                     [(ngModel)]="Date5">
+               </div>
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="m5" placeholder="" name="mil5"
+                     [(ngModel)]="mileage_of_interviews5">
+               </div>
+               <div class="col-12 col-sm-4 col-md-4 col-lg-4 mob-pt-10">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div> &nbsp;
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div>
+               </div>
+            </div> <br>
+            <div class="row p-b-20">
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="date" class="form-control bg-white" id="d6" placeholder="" name="dat6"
+                     [(ngModel)]="Date6">
+               </div>
+               <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+                  <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="m6" placeholder="" name="mil6"
+                     [(ngModel)]="mileage_of_interviews6">
+               </div>
+               <div class="col-12 col-sm-4 col-md-4 col-lg-4 mob-pt-10">
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image1.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div> &nbsp;
+                  <div class="upload-btn-wrapper">
+                     <button class="btnn" type="button" class="btn_img"> <img src="../../assets/image.jpeg" width="18"
+                           height="18" class="fa-solid fa-images"></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ===========================================date ends Here -->
+      </div>
+      <!-- =========================================================piwi-report Date and mileage of interviews put========== -->
+
+
+      <!-- =============================piwi report checkbox================ -->
+      <div class="row pb-20">
+         <h2> piwi report </h2>
+         <div class="col-4 col-sm-3 col-md-3 col-lg-2 mob-p0">
+            <div class="form-check mob-pl-0">
+               <input [class.form-control]="'formControl'" type="checkbox" class="input-chk-box" id="check1" name="option1" [(ngModel)]="air_conditioning">
+               <label class="form-check-label" for="check1"> air conditioning </label>
+            </div>
+         </div>
+         <div class="col-4 col-sm-3 col-md-3 col-lg-2 mob-p0">
+            <div class="form-check mob-pl-0">
+               <input [class.form-control]="'formControl'" type="checkbox" class="input-chk-box" id="check2" name="option1" [(ngModel)]="Rim">
+               <label class="form-check-label" for="check2"> Rim </label>
+            </div>
+         </div>
+         <div class="col-4 col-sm-3 col-md-3 col-lg-2 mob-p0">
+            <div class="form-check mob-pl-0">
+               <input [class.form-control]="'formControl'" type="checkbox" class="input-chk-box" id="check3" name="option1" [(ngModel)]="Leather">
+               <label class="form-check-label" for="check3"> Leather </label>
+            </div>
+         </div>
+      </div>
+
+      <!-- =============================piwi report checkbox================ -->
+      <!-- ========================================return and Continue -->
+      <div class="col-12">
+         <span style="float: left">
+            <button type="button" (click)="return(1)">Return</button>
+         </span>
+         <span style="float: right">
+            <button type="button" class="btn btn-danger" (click)="criteriasf()">Continue</button>
+         </span>
+
+      </div>
+      <!-- ========================================return and Continue -->
+   </div>
+</div>
+
+<!-- ==========================================Describe Property==== -->
+<div *ngIf="describeyourp">
+   <div class="row p-t-30">
+      <div class="row p-t-30">
+         <h2> Describe your property! </h2>
+         <div class="form-group">
+            <div class="col-md-6">
+               <label for="" class=""> Ad Title <span class="required"></span><span class="champ-r"> Required field
+                  </span></label>
+               <input [class.form-control]="'formControl'" type="text" class="form-control" placeholder="" [(ngModel)]="dptitle">
+               <span class="float-right"><small> 0 / 100 characters </small></span>
+            </div>
+         </div>
+      </div>
+      <div class="row p-t-30">
+         <div class="form-group">
+            <label for="comment"> Description of your experiences <span class="champ-r"> Required field </span></label>
+            <textarea class="form-control" rows="8" id="comment" [(ngModel)]="Description"></textarea>
+            <span class="champ-r"> 0 / 100 characters </span>
+         </div>
+         <div class="col-12">
+            <span style="float: left">
+               <button type="button" (click)="return(2)">Return</button>
+            </span>
+            <span style="float: right">
+               <button type="button" class="btn btn-danger" (click)="describePropertyf()">Continue</button>
+            </span>
+
+         </div>
+      </div>
+
+   </div>
+</div>
+<!-- ==========================================Describe Property==== -->
+
+
+
+
+<!-- ========================================Upload picture -->
+
+<div *ngIf="upload_pictures">
+   <div class="row p-t-30">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4 mb-md-0 p-0">
+         <div class="upload__box"> &nbsp; &nbsp; Upload pictures
+            <div class="upload__btn-box">
+               <div class="col-md-2 productAddfromImages" *ngFor='let url of imageurls; let i = index'>
+                  <img class="img-fluid" [src]="url.base64String">
+                  <a (click)="removeImage(i)" class="btn btn-xs btn-danger">Remove</a>
+               </div>
+               <div>
+                  <br>
+                  <label>Add Images</label>
+                  <input [class.form-control]="'formControl'" type="file" [(ngModel)]="idfiles" (change)="onSelectFile($event)" multiple accept="image/*" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ========================================return and Continue -->
+      <div class="col-12">
+         <span style="float: left">
+            <button type="button" (click)="return(3)">Return</button>
+         </span>
+         <span style="float: right">
+            <button type="button" class="btn btn-danger" (click)="uploadf()">Continue</button>
+         </span>
+
+      </div>
+      <!-- ========================================return and Continue -->
+   </div>
+
+</div>
+
+<!-- =======================================================map=========== -->
+<div *ngIf="maps">
+   <div class="col-12">
+
+      &nbsp; <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.76457430403!2d2.2769948739278507!3d48.85894658138312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sin!4v1654522885403!5m2!1sen!2sin"
+         width="1500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
+   <div class="col-12">
+      <span style="float: left">
+         <button type="button" (click)="return(4)">Return</button>
+      </span>
+      <span style="float: right">
+         <button type="button" class="btn btn-danger" (click)="mapf()">Continue</button>
+      </span>
+
+   </div>
+
+</div>
+<!-- =======================================================map=========== -->
+
+<!-- ================================your contact details==================== -->
+<div *ngIf="contact_details">
+   <div class="row p-t-30">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+         <h2> Your contact details </h2>
+         <div class="row p-t-30">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 ">
+               <label for="nom" class="form-label"> Last name </label><span class="champ-r"> Required field </span>
+               <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="nom" [(ngModel)]="firstName">
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 ">
+               <label for="prénom" class="form-label"> First name </label><span class="champ-r"> Required field </span>
+               <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="prénom"
+                  [(ngModel)]="lastName">
+            </div>
+         </div>
+         <div class="row p-t-30">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 ">
+               <label for="email" class="form-label"> E-mail </label><span class="champ-r"> Required field </span>
+               <input [class.form-control]="'formControl'" type="email" class="form-control bg-white" id="email" placeholder="" name="email"
+                  [(ngModel)]="email">
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 ">
+               <label for="téléphone" class="form-label"> Telephone </label><span class="champ-r"> Required field
+               </span>
+               <input [class.form-control]="'formControl'" type="text" class="form-control bg-white" id="" placeholder="" name="téléphone"
+                  [(ngModel)]="telephone">
+            </div>
+         </div>
+      </div>
+      <!-- ========================== terms and conditions start here========================== -->
+      <div class="p-t-30">
+         <label class="switch switchh">
+            <input [class.form-control]="'formControl'" type="checkbox" checked="">
+            <span class="slider round"></span>
+         </label>
+         <span class="masqur"> Hide number </span>
+      </div>
+      <p> By validating the distribution of my ad I accept the <a href="#" class="an-ker"> general conditions of use
+         </a> and the <a href="#" class="an-ker"> rules of distribution </a> of the site porschists.com and I authorize
+         porschists.ocm to distribute my ad </p>
+      <!-- ========================== terms and conditions Ends here========================== -->
+      <div class="col-12">
+         <span style="float: left">
+            <button type="button" (click)="return(5)">Return</button>
+         </span>
+         <span style="float: right">
+            <button type="button" class="btn btn-danger" (Click)="yourpropf()">Continue</button>
+         </span>
+
+      </div>
+   </div>
+</div>
+<!-- ================================your contact details==================== -->
+
+
+<!-- ========================================Upload picture -->
+<!-- <div class="row p-b-20">
+      <span> -->
+<!-- <div class="col-12">
+      <span class="col-md-6  ">
+         <label for="modèle" class="form-label">Model
+            <span style="float: right;color: #ff0000;">
+               *
+            </span></label>
+         <div col-12 col-sm-6 col-md-6 col-lg-6 mob-p0>
+            <select name="city" class="rounded-inputs20 select-select col-md-3">
+               <option *ngFor="let model1 of Model" [value]="model1.id">{{model1.name}}</option>
+            </select>
+         </div>
+      </span>
+
+      <span class="col-md-6 ">
+         <label for="modèle" class="form-label">SubModel
+            <span style="float: right;color: #ff0000;">
+               *
+            </span></label>
+         <div col-12 col-sm-6 col-md-6 col-lg-6 mob-p0>
+            <select name="city" class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               <option *ngFor="let SubModel1 of SubModel" [value]="SubModel1.id">{{SubModel1.name}}</option>
+            </select>
+         </div>
+      </span>
+   </div>
+
+  
+ <div >
+   <label for="power">Hero Power</label>
+   <select id="power"
+           required
+           [(ngModel)]="powers" name="power"
+           #power="ngModel">
+     <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+   </select>
+   <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+     Power is required
+   </div>
+ </div> -->
+
+
+<!-- <div class="col-12" *ngIf="radio">
+      <br>
+      <label for="modèle" class="form-label">State
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Manual" name="cars" [(ngModel)]="state">Manual
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Automatique" name="state" [(ngModel)]="state">Automatique
+      </div>
+      <br>
+   </div> -->
+
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Fuel
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Essence" [(ngModel)]="Fuel">Essence
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Diesel" [(ngModel)]="Fuel">Diesel
+         <input [class.form-control]="'formControl'" type="radio" value="Manual" [(ngModel)]="Fuel">Electric
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Hybrid" [(ngModel)]="Fuel">Hybrid
+      </div>
+   </span> -->
+
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Gearbox
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Manual" [(ngModel)]="Gearbox">Manual
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Automatique" [(ngModel)]="Gearbox">Automatique
+         <input [class.form-control]="'formControl'" type="radio" value="Tiptronic" [(ngModel)]="Gearbox">Tiptronic
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="KDP" [(ngModel)]="Gearbox">KDP
+      </div>
+   </span>
+</div> -->
+<!-- -------------Warranty Approved Starts--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Warranty Approved
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="WarrantyApproved">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="WarrantyApproved">Nope
+      </div>
+   </span> -->
+<!-- -------------Warranty Approved Ends--------- -->
+
+<!-- -------------Service book--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Service book
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Servicebook">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Servicebook">Nope
+      </div>
+   </span> -->
+<!-- -------------Service book--------- -->
+
+<!-- -------------Maintenance invoice--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Maintenance invoice
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Maintenanceinvoice">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Maintenanceinvoice">Nope
+      </div>
+   </span> -->
+<!-- -------------Maintenance invoice--------- -->
+
+<!-- -------------DamagedRequired --------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">DamagedRequired
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="DamagedRequired ">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="DamagedRequired ">Nope
+      </div>
+   </span> -->
+<!-- -------------DamagedRequired --------- -->
+
+<!-- -------------Original paint--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Original paint
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Originalpaint">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Originalpaint">Nope
+      </div>
+   </span> -->
+<!-- -------------Original paint--------- -->
+
+<!-- -------------Matching number--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Matching number
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Matchingnumber">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Matchingnumber">Nope
+      </div>
+   </span> -->
+<!-- -------------Matching number--------- -->
+
+<!-- -------------Matching_color_paint--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Matching color paint
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Matching_color_paint">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Matching_color_paint">Nope
+      </div>
+   </span> -->
+<!-- -------------Matching_color_paint--------- -->
+
+<!-- -------------Service book--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Service book
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Servicebook">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Servicebook">Nope
+      </div>
+   </span> -->
+<!-- -------------Service book--------- -->
+<!-- -------------Service book--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Service book
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Servicebook">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Servicebook">Nope
+      </div>
+   </span> -->
+<!-- -------------Service book--------- -->
+<!-- -------------Service book--------- -->
+<!-- <span class="col-12 ">
+      <label for="modèle" class="form-label">Service book
+         <span style="float: right;color: #ff0000;">
+            *
+         </span></label>
+      <div>
+         <input [class.form-control]="'formControl'" type="radio" value="Yes" [(ngModel)]="Servicebook">Yes
+         &nbsp;&nbsp; <input [class.form-control]="'formControl'" type="radio" value="Nope" [(ngModel)]="Servicebook">Nope
+      </div>
+   </span> -->
+<!-- -------------Service book--------- -->
+
+
+
+<!-- </div>  -->
+<!-- -----------------------
+<div class="row">
+   <div class="col-md-12">
+      <h1>Déposer une annonce</h1>
+   </div>
+   <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="form-group">
+         <div class="col-md-10">
+            <label for="" class="">Quel est le titre de l'annonce ? <span class="required">*</span><span class="champ-r">Champ requis</span></label>
+            <div class="input-group mb-3">
+               <input [class.form-control]="'formControl'" type="text"    placeholder="">
+               <button class="btn btn-danger continur" type="submit">Continuer</button> 
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+---------------------2
+<div class="row">
+   <div class="text-left col-12 col-sm-12 col-md-12 col-lg-12">
+      <h2>Choisissez une catégorie suggérée</h2>
+      <div class="form-check form-chk">
+         <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked="">
+         <label class="form-check-label" for="radio1"><i class="fa-solid fa-car"></i> Porsche Voitures </label>
+      </div>
+      <div class="form-check form-chk">
+         <input [class.form-control]="'formControl'" type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+         <label class="form-check-label" for="radio2"><i class="fa-solid fa-car"></i> Pièces et  accessoires</label>
+      </div>
+   </div>
+   <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-right">
+      <button class="btn btn-danger continur">Continuer</button>
+   </div>
+</div> -->
+<!-- -----------------------3 -->

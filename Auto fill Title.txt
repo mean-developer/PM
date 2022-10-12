@@ -1,0 +1,16 @@
+component.ts
+seat1:any;
+  seat2:any;
+  seat1Modified(v) {
+    this.seat2=v
+  }
+component.html
+
+<div class="col-md-1"> 
+  <input type="text" [(ngModel)]="seat1" (ngModelChange)="seat1Modified(seat1)"/>
+</div> 
+
+
+<div class="col-md-1"> 
+  <input type="text" [(ngModel)]="seat2"  /> 
+</div> 

@@ -1,0 +1,88 @@
+<!-- ---------------------------------Paint Thckness And Repainted BodyWork Starts------------------------- -->
+      <div class="row p-b-20">
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <h2> Paint Thickness </h2>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="porte" class="form-label"> Gate </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" [(ngModel)]="ptGate" placeholder=" Enter ptGate"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+            
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="ailes" class="form-label"> wings </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" [(ngModel)]="ptWings" placeholder=" Enter ptWings"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="capot" class="form-label"> Hood </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="ptHood" placeholder=" Enter ptHood"
+                     class="rounded-inputs20 select-select col-md-3" name="capot" style="vertical-align: inherit;">
+               </div>
+            </div>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="toit" class="form-label"> Roof </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="ptRoof" placeholder=" Enter ptRoof"
+                     class="rounded-inputs20 select-select col-md-3" name="toit" style="vertical-align: inherit;">
+               </div>
+            </div>
+         </div>
+      
+         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+            <h2> Repainted bodywork </h2>
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="porte" class="form-label"> Gate </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbGate" placeholder=" Enter rbGate" name="porte"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+      
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="ailes" class="form-label"> wings </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" [(ngModel)]="rbWings" type="text" placeholder=" Enter rbWings"
+                     class="rounded-inputs20 select-select col-md-3" name="ailes" style="vertical-align: inherit;">
+               </div>
+            </div>
+      
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="capot" class="form-label"> Hood </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbHood" placeholder=" Enter rbHood" name="capot"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+      
+            <div class="row p-b-20">
+               <div class="col-12 col-sm-6 col-md-4 col-lg-2 mob-p0">
+                  <label for="toit" class="form-label"> Roof </label>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mob-p0">
+                  <input [class.form-control]="'formControl'" type="text" [(ngModel)]="rbRoof" placeholder=" Enter rbRoof" name="toit"
+                     class="rounded-inputs20 select-select col-md-3" style="vertical-align: inherit;">
+               </div>
+            </div>
+      
+         </div>
+      </div>
+     <!-- ---------------------------------Paint Thckness And Repainted BodyWork Ends------------------------- -->
