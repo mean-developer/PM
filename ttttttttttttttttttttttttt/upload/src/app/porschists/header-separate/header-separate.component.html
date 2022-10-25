@@ -1,0 +1,109 @@
+<!--Header-->
+<header id="header" class="header header-wrap mih-90 d-flex align-items-center">
+    <div class="container mw-100 ">
+       <div class="row align-items-center">
+          <!--Logo / Menu Toggle-->
+          <div class="col-6 col-sm-6 col-md-6 col-lg-1 align-self-center justify-content-start d-flex">
+             <!--Mobile Toggle-->
+             <!-- <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open me-3 d-lg-none"><i class="icon an an-times-l"></i><i class="icon an an-bars-l"></i></button> -->
+             <!--End Mobile Toggle-->
+
+             <!--Logo-->
+             <div class="logo"><a href="#"><img class="logo-img mh-100" src="assets/images/logo/logo.png" alt="logo" title="logo" width="140"><span class="logo-txt d-none"></span></a></div>
+             <!--End Logo-->
+          </div>
+          <!--End Logo / Menu Toggle-->
+
+          <!--Search bar and post of advertisement starts here-->
+          <!-- <div class="col-1 col-sm-1 col-md-1 col-lg-6 d-none d-lg-block">
+             <div class="top-srch">
+                <span>
+                   <span class="btn btn-sm btn-primary rounded px-4" href="#">
+                    <span class="fa-solid fa-square-plus fa-plus"></span>
+                    <span >posting of advertisement</span>
+                </span>
+            </span>
+            &nbsp;&nbsp;
+                <span>
+                   <span class="srch" href="#">
+                    <span class="fa-solid fa-magnifying-glass fa-srch"></span>
+                    <span style="vertical-align: inherit;">To research</span>
+                   </span>
+                </span>
+            </div>
+          </div> -->
+          <div class="col-1 col-sm-1 col-md-1 col-lg-6 d-none d-lg-block">
+            <ul class="top-srch">
+               <li>
+                  <a class="btn btn-sm btn-primary rounded px-4" href="#">
+                    <i class="fa-solid fa-square-plus fa-plus"></i>
+                    <span style="vertical-align: inherit;">
+                        <span style="vertical-align: inherit;">posting of advertisement</span>
+                    </span></a>
+               </li>
+               <li>
+                  <a class="srch" href="#"><i class="fa-solid fa-magnifying-glass fa-srch"></i>
+                    <span style="vertical-align: inherit;">
+                        <span style="vertical-align: inherit;">To research</span>
+                    </span></a>
+               </li>
+            </ul>
+         </div>
+          <!--Search bar and post of advertisement  ends here-->
+
+          <!--Right side pages starts here-->
+          <div class="col-6 col-sm-6 col-md-6 col-lg-5 align-self-center icons-col text-right d-flex justify-content-end">
+            
+            <!--Notofication starts Here-->
+             <div class="wishlist-link iconset">
+                <a href="#">
+                   <img src="../../../assets/fonts/icons8-bell-50.png">
+                   <span class="wishlist-count counter d-flex-center justify-content-center position-absolute translate-middle rounded-circle">
+          <span style="vertical-align: inherit; ">0</span></span>
+                   <div class="hovr"><span style="vertical-align: inherit;" >My research</span></div>
+                </a>
+             </div>
+             <!--Notofication starts Here-->
+
+             <!--Faveroits starts here-->
+             <div class="wishlist-link iconset">
+                <a href="#">
+                   <img src="../../../assets/fonts/icons8-heart-24.png">
+                   <div class="hovr">
+                    <!-- <nav> -->
+                       
+                        <span style="vertical-align: inherit;" [routerLink]="['/pages/favoris']" >Favorites</span>
+                        <!-- </nav> -->
+                        <!-- <button style="vertical-align: inherit;"  routerLink="//pages/favoris" routerLinkActive="active">Favorites</button> -->
+
+                    </div>
+                </a>
+             </div>
+             <!--Faveroits ends here-->  
+
+             <!--Messages starts Here -->
+             <div class="header-cart iconset">
+                <a href="#" class="site-header__cart btn-minicart" data-bs-toggle="modal" data-bs-target="#minicart-drawer">
+                   <img src="../../../assets/fonts/icons8-sms-24.png">
+                   <div class="hovr"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Posts</span></span></div>
+                </a>
+             </div>
+             <!--Messages starts Here-->
+
+             <!--Login starts here-->
+             <div class="user-link iconset">
+                <img src="../../../assets/fonts/icons8-user-24.png">
+                <div class="hovr"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Shane</span></span></div>
+             </div>
+             <!--Login Ends Here-->
+
+          </div>
+
+          <!--Right side pages starts here-->
+
+       </div>
+    </div>
+ </header>
+ <!--End Header-->
+
+<router-outlet></router-outlet>

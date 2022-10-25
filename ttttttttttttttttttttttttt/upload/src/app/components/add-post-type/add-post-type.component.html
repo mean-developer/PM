@@ -1,0 +1,20 @@
+<div class="header-main header-12 mt-5">
+</div>
+<div class="row">
+    <div class="text-left col-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="h4">Choisissez une catégorie suggérée</h3>
+        <div class="form-check form-chk">
+           <input type="radio" class="form-check-input" (change)="changeCars($event)" id="radio1" name="optradio" value="option1">
+           <label class="form-check-label" for="radio1"><i class="fa-solid fa-car"></i> Porsche Voitures </label>
+        </div>
+        <div class="form-check form-chk">
+           <input type="radio" class="form-check-input" (change)="changeCars1($event)" id="radio2" name="optradio" value="option2">
+           <label class="form-check-label" for="radio2"><i class="fa-solid fa-car"></i> Pièces et  accessoires</label>
+        </div>
+    </div>
+    <div class="row p-t-30">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-right">
+         <button class="btn btn-my1" (click)="continue()">Continuer</button>
+       </div>
+    </div>
+</div>

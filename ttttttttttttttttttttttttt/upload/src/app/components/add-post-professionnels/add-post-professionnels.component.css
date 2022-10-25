@@ -1,0 +1,54 @@
+.p-b-i {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+.active {
+    display: block;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox]:checked + div:before {
+    background: #ff0000 !important;
+    border-radius: 50% !important;
+    border-color: #ff0000 !important;
+}
+
+
+.image-container{
+    height: 184px;
+    width: 159px;
+    border: 1px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+  }
+  .image-type {
+    font-size: 9px;
+    padding: 5px;
+    border-radius: 0px 7px 0px 0px;
+    cursor: pointer;
+  }
+
+  .fa-times-circle{
+    top: -10px;
+    position: absolute;
+    right: -14px;
+    cursor: pointer;
+  }
+
+  agm-map {
+    height: 500px;
+  }
+
+  .googleMap{
+    position: absolute;
+    z-index: 99999;
+    top: 72px;
+  }

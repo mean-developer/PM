@@ -1,0 +1,182 @@
+<div class="template-index index-demo4">
+    <div class="page-wrapper">
+        <!--Page Wrapper-->
+        <div id="page-content">
+            <!--Container-->
+            <div class="container">
+                <!--Main Content-->
+                <div class="login-register pt-2 pt-lg-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 mb-md-0">
+
+
+                            <div class="inner">
+                                <form [formGroup]="registerForm" class="customer-form" (ngSubmit)="onSubmit()">
+                                    <h3 class="h4 text-uppercase">Bonjour !</h3>
+                                    <p>s'inscrire pour découvrir toutes nos fonctionnalités.</p>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerEmail">User Name <span
+                                                        class="required">*</span></label>
+                                                <input type="text" formControlName="userName" name="type" placeholder=""
+                                                    id="type" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }" />
+                                                <div *ngIf="submitted && f['userName'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['userName'].errors['required']">User Name is
+                                                        required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerEmail">First Name <span
+                                                        class="required">*</span></label>
+                                                <input type="text" formControlName="firstName" name="type"
+                                                    placeholder="" id="type" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+                                                <div *ngIf="submitted && f['firstName'].errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f['firstName'].errors['required']">First Name is
+                                                        required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerEmail">Last Name <span
+                                                        class="required">*</span></label>
+                                                <input type="text" formControlName="lastName" name="type" placeholder=""
+                                                    id="type" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+                                                <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['lastName'].errors['required']">Last Name is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerEmail">E-mail <span
+                                                        class="required">*</span></label>
+                                                <input type="email" formControlName="email" name="email" placeholder=""
+                                                    id="email" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerPassword">Mobile Number <span
+                                                        class="required">*</span></label>
+                                                <input type="number" formControlName="mobileNumber" name="number"
+                                                    placeholder="" id="number" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['mobileNumber'].errors }" />
+                                                <div *ngIf="submitted && f['mobileNumber'].errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f['mobileNumber'].errors['required']">Number is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerPassword">Landline Number <span
+                                                        class="required">*</span></label>
+                                                <input type="number" formControlName="landlineNumber" name="number"
+                                                    placeholder="" id="number" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['landlineNumber'].errors }" />
+                                                <div *ngIf="submitted && f['landlineNumber'].errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f['landlineNumber'].errors['required']">Number is
+                                                        required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerPassword">Password <span
+                                                        class="required">*</span></label>
+                                                <input type="password" formControlName="password"
+                                                    name="customer[password]" placeholder="" id="CustomerPassword"
+                                                    value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                                                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['password'].errors['required']">Password is required
+                                                    </div>
+                                                    <div *ngIf="f['password'].errors['minlength']">
+                                                        Password must be at least 8 characters
+                                                        Password must be at least 1 Upper case letter
+                                                        Password must be at least 1 lower case letter
+                                                        Password must be at least 1 number
+                                                    </div>
+                                                    <div *ngIf="f['password'].errors['maxlength']">
+                                                        Password must not exceed 20 characters
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerPassword">Address <span
+                                                        class="required">*</span></label>
+                                                <textarea formControlName="address" name="address" placeholder=""
+                                                    id="number" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"></textarea>
+                                                <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['address'].errors['required']">Address is
+                                                        required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="comeBack_up" *ngIf="apiResponse">
+                                            <div *ngIf="apiResponse.error; else loggedOut">
+                                                <div class="alert alert-danger"><strong>{{ apiResponse.errorMessage
+                                                        }}</strong></div>
+                                            </div>
+                                            <ng-template #loggedOut>
+                                                <div class="alert alert-success"><strong>{{ apiResponse.errorMessage
+                                                        }}</strong></div>
+                                            </ng-template>
+                                        </div>
+
+
+                                        <!-- <div class="col-12">
+                                            <a routerLink="/forgot-pass">Mot de passe oublié</a>
+                                        </div> -->
+                                        <br>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="text-left col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <p class="d-flex-center">
+                                                <!-- <input type="submit" (click)="onSubmit()" class="btn rounded me-auto w-100" value="Se connecter"> -->
+                                                <button type="submit" class="btn rounded me-auto w-100">Se
+                                                    connecter</button>
+                                            </p>
+                                            <p>Vous voulez vous connecter ? <a routerLink="/signin">Connexion</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--End Main Content-->
+            </div>
+            <!--End Container-->
+        </div>
+        <!--End Page Wrapper-->
+    </div>
+</div>

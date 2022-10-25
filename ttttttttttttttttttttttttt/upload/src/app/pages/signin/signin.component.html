@@ -1,0 +1,96 @@
+<div class="template-index index-demo4">
+    <!-- Page Loader -->
+    <!-- <div id="pre-loader"><img src="assets/images/loader.gif" alt="Loading..." /></div> -->
+    <!-- End Page Loader -->
+
+    <!--Page Wrapper-->
+    <div class="page-wrapper">
+        <div id="page-content">
+            <!--Container-->
+            <div class="container">
+                <div class="login-register pt-2 pt-lg-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 mb-md-0">
+
+                            <div class="inner">
+                                <form [formGroup]="loginForm" class="customer-form" (ngSubmit)="onSubmit()">
+                                    <h3 style="text-transform: uppercase !important;font-size: 16px;">Bonjour !</h3><br>
+                                    <p style="font-size: 13px;
+    font-weight: 600;">Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerEmail">E-mail <span
+                                                        class="required">*</span></label>
+                                                <input type="email" formControlName="email" name="customer[email]"
+                                                    placeholder="" id="CustomerEmail" value=""
+                                                    [ngClass]="{ 'is-invalid': submitted && g['email'].errors }" />
+                                                <div *ngIf="submitted && g['email'].errors" class="invalid-feedback">
+                                                    <div *ngIf="g['email'].errors['required']">Email is required</div>
+                                                    <div *ngIf="g['email'].errors['email']">Email is invalid</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="CustomerPassword">Mot de Passe <span
+                                                        class="required">*</span></label>
+                                                <input type="password" formControlName="password"
+                                                    name="customer[password]" placeholder="" id="CustomerPassword"
+                                                    [ngClass]="{ 'is-invalid': submitted && g['password'].errors }" />
+                                                <div *ngIf="submitted && g['password'].errors" class="invalid-feedback">
+                                                    <div *ngIf="g['password'].errors['required']">Password is required
+                                                    </div>
+                                                    <div *ngIf="g['password'].errors['minlength']">
+                                                        Password must be at least 8 characters<br>
+                                                        Password must be at least 1 Upper case letter
+                                                        Password must be at least 1 lower case letter
+                                                        Password must be at least 1 number
+                                                    </div>
+                                                    <div *ngIf="g['password'].errors['maxlength']">
+                                                        Password must not exceed 20 characters
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="comeBack_up" *ngIf="apiResponse">
+                                            <div *ngIf="apiResponse.error; else loggedOut">
+                                                <div class="alert alert-danger"><strong>{{ apiResponse.errorMessage
+                                                        }}</strong></div>
+                                            </div>
+                                            <ng-template #loggedOut>
+                                                <div class="alert alert-success"><strong>{{ apiResponse.errorMessage
+                                                        }}</strong></div>
+                                            </ng-template>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <a routerLink="/forgot-pass">Mot de passe oublié</a>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="text-left col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <p class="d-flex-center">
+                                                <input type="submit" class="btn rounded me-auto w-100"
+                                                    value="Se connecter">
+
+                                            </p>
+                                            <p>Envie de nous rejoindre ? <a href="javascript:void(0)"
+                                                    [routerLink]="['/signup']">Créer un compte</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--End Main Content-->
+            </div>
+            <!--End Container-->
+        </div>
+        <!--End Page Wrapper-->
+    </div>

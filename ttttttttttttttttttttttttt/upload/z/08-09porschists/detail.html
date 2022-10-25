@@ -1,0 +1,1742 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!--Required Meta Tags-->
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="description">
+      <!-- Title Of Site -->
+      <title>PORSCHISTS</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="assets/images/favicon.ico" />
+      <!-- Plugins CSS -->
+      <link rel="stylesheet" href="assets/css/plugins.css" />
+      <!-- Main Style CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/global.css">
+      <link rel="stylesheet" href="assets/css/mystyle.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css" />-->
+      <link rel="stylesheet" href="assets/css/style.css" />
+      <link rel="stylesheet" href="assets/css/responsive.css" />
+      <style>
+         <!--input dropdown-->
+         .dropbtn {
+         background-color: #04AA6D;
+         color: white;
+         padding: 16px;
+         font-size: 16px;
+         border: none;
+         cursor: pointer;
+         }
+         .dropbtn:hover, .dropbtn:focus {
+         background-color: #3e8e41;
+         }
+         #myInput {
+         box-sizing: border-box;
+         background-image: url('searchicon.png');
+         background-position: 14px 12px;
+         background-repeat: no-repeat;
+         font-size: 13px;
+         padding: 14px 20px 12px 20px;
+         border: none;
+         border-bottom: 1px solid #ddd;
+         }
+         #myInput:focus 
+         {
+         /*outline: 3px solid #ddd;*/
+         }
+         .dropdown {
+         position: relative;
+         display: inline-block;
+         }
+         .dropdown-content {
+         display: none;
+         position: absolute;
+         /* background-color: #f6f6f6;*/
+         overflow: auto;
+         /*border: 1px solid #ddd;*/
+         z-index: 1;
+         }
+         @media (min-width:992px)
+         {
+         .dropdown-content
+         {
+         width: 300px;
+         }
+         }
+         .dropdown-content a {
+         color: black;
+         padding: 7px 5px;
+         text-decoration: none;
+         display: block;
+         }
+         .dropdown a:hover {background-color: #ddd;}
+         .show {display: block;}
+         <!--end input dropdown -->
+         .containerr{
+         width:100%;
+         height:100%;
+         //background-color:green;
+         float:right;
+         position:absolute;
+         // right:-260px;
+         }
+         .open-sidebar{
+         right:0px;
+         }
+         #sidebar{
+         box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         width: 100%;
+         height: 1000px;
+         overflow:auto;
+         background-color: #fff;
+         position:absolute;
+         left:-27px;
+         top:0px;
+         }
+         .menu, .submenu {
+         width:100%;
+         height:100%;
+         list-style-type:none;
+         margin:0;
+         padding:0;
+         }
+         .submenu {
+         z-index: 999;
+         ///display:none;
+         position:absolute;
+         top:0px;
+         right: 706px;
+         background-color:#fff;
+         padding-left:20px;
+         height:1000px;
+         -webkit-transition:  right 0.4s ease-in-out;
+         -moz-transition:  right 0.4s ease-in-out;
+         -ms-transition:  right 0.4s ease-in-out;
+         -o-transition:  right 0.4s ease-in-out;
+         transition:  right 0.4s ease-in-out;  
+         width: 100%;
+         }
+         .menu-1
+         {
+         padding-left:0;
+         }
+         .menu li, .submenu li {
+         //border: 2px solid #aa4455;
+         list-style-type: none!important;
+         }
+         .menu li a,
+         .menu li span {
+         display: block;
+         padding: 10px 30px;
+         text-decoration: none;
+         text-align: left;
+         color:#444;
+         font-size:14px;
+         font-weight: 600;
+         }
+         .bar {
+         width: 60%;
+         height:3px;
+         display:block;
+         background-color: #fff;
+         margin: 0px 0px 3px 0px;
+         }
+         .main-content {
+         box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         border-radius: 5px;
+         width: 40px;
+         height: auto;
+         position: absolute;
+         padding: 10px 0px 6px 12px;
+         margin:0;
+         top: 0px;
+         left: 0px;
+         z-index:10;
+         background-color: #f5f5f5;
+         }
+         .menu1:hover
+         {
+         cursor:pointer;
+         }
+         #sidebar ul li:focus ul,
+         #sidebar ul li:active ul{
+         right:0px;
+         }
+         #sidebar ul> li:hover> a,
+         #sidebar ul li:hover span {
+         color:#000;
+         background-color:#f5f5f5;
+         }
+         .back {
+         color: black;
+         padding: 0px;
+         }
+         .modal-backdrop.show 
+         {
+         opacity:0 !important;
+         }
+         .modal-backdrop
+         {
+         display:none;
+         }
+         <!--for tab with radio button-->
+         .tab-list {
+         width: 100%;
+         float: left;
+         list-style: none;
+         position: relative;
+         font-family: Arial;
+         color: #fff;
+         }
+         .tab-list li {
+         float: left;
+         }
+         .tab-list li input[type="radio"] {
+         display: none;
+         }
+         .tab-list li label {
+         float: right;
+         <!--background: #ccc;-->
+         padding: 0px 20px;
+         color: #000;
+         cursor: pointer;
+         padding: 0px 15px;
+         }
+         .tab-list li label:hover {
+         background: #fff;
+         }
+         .tab-list li .content {
+         z-index: 99999;
+         display: none;
+         overflow: hidden;
+         width: 100%;
+         padding: 10px;
+         position: absolute;
+         top: 28px;
+         left: 0;
+         background: #fff;
+         color: #000;
+         }
+         .tab-list li [id^="tab"]:checked + label {
+         <!--background: #666;-->
+         }
+         .tab-list li [id^="tab"]:checked ~ [id^="tab-content"] {
+         display: block;
+         }          
+         .tab-list li input[type="radio"] {
+         display: inline-block;
+         }
+         input[type='radio']:after {
+         width: 17px;
+         height: 17px;
+         border-radius: 15px;
+         top: -4px;
+         left: -4px;
+         position: relative;
+         background-color: #fff;
+         content: '';
+         display: inline-block;
+         visibility: visible;
+         border: 2px solid #ff0000;
+         padding:10px;
+         margin:1px;
+         }
+         input[type='radio']:checked:after {
+         width: 15px;
+         height: 15px;
+         border-radius: 15px;
+         top: -4px;
+         left: -4px;
+         position: relative;
+         background-color: #ff0000;
+         content: '';
+         display: inline-block;
+         visibility: visible;
+         border: 2px solid #ff0000;
+         }
+      </style>
+   </head>
+   <!--<body class="template-product product-layout2">-->
+   <body class="">
+      <!--Page Wrapper-->
+      <div class="page-wrapper">
+      <div class="container mw-100 p-0 d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+         <!--mobile header-->
+         <nav class="sticky-top p-0 nav-h d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
+            <div class="container mw-100 text-white ">
+               <div class="row ">
+                  <div class="al-s-c logo-res">
+                     <a class="btn-w tou-mob" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample1">
+                     <i class="fa fa-bars can-bar" aria-hidden="true"></i>  
+                     </a>
+                     <div class="offcanvas offcanvas-start p-0" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel1" >
+                        <div class="offcanvas-header">
+                           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                           <div class="containerr">
+                              <div id="sidebar" >
+                                 <ul class="menu" style="height: 100%;overflow: auto;">
+                                    <li tabindex="1">
+                                       <span class="menu1">Voiture <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                       <ul class="submenu submenu2">
+                                          <li><a href="#" class="back" style="padding-left:25px;border-bottom:1px solid #d7cece;color: #ff0000;"><i class="fa fa-arrow-left" aria-hidden="true"></i> menu</a></li>
+                                          <ul class="mob-voitur">
+                                             <li><a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/718.jpg" data-src="assets/images/products/718.jpg" alt="image"/><span>718</span></a></li>
+                                             <li><a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/911.jpg" data-src="assets/images/products/911.jpg" alt="image"/><span>911</span></a></li>
+                                          </ul>
+                                          <ul class="mob-voitur">
+                                             <li><a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/taycan.jpg" data-src="assets/images/products/taycan.jpg" alt="image"/><span>Taycan</span></a></li>
+                                             <li><a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/panamera.jpg" data-src="assets/images/products/panamera.jpg" alt="image"/><span>Panamera</span></a></li>
+                                          </ul>
+                                          <ul class="mob-voitur">
+                                             <li><a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/macan.jpg" data-src="assets/images/products/macan.jpg" alt="image"/><span>Macan</span></a></li>
+                                             <li><a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/cayenne.jpg" data-src="assets/images/products/cayenne.jpg" alt="image"/><span>Cayenne</span></a></li>
+                                          </ul>
+                                       </ul>
+                                    </li>
+                                    <li tabindex="2">
+                                       <span class="menu1">Pièces détacher <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                       <ul class="submenu">
+                                          <li><a href="#" class="back" style="padding-left:25px;border-bottom:1px solid #d7cece;color: #ff0000;"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour menu</a></li>
+                                          <div class="col-12 col-sm-12 col-md-12 col-lg-3 sidebar filterbar">
+                                             <div class="sidebar_tags">
+                                                <!--Categories-->
+                                                <div class="sidebar_widget categories filterBox filter-widget">
+                                                   <div class="widget-content filterDD">
+                                                      <ul class="clearfix sidebar_categories mb-0 mob-voitur1">
+                                                         <li class="lvl-1 sub-level">
+                                                            <a href="#" class="mb-2 car">
+                                                               <img src="assets/images/megamenu/boxster-s.png" alt="image"/>
+                                                               <span>BOXSTER</span>
+                                                               <span class="float-right angle-r">
+                                                                  <!--<i class="fa-solid fa-angle-down"></i>-->
+                                                               </span>
+                                                            </a>
+                                                            <ul class="sublinks catgory">
+                                                               <li class="level2"><a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2012 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">987</strong><small class="d-blk">2005 2012 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">986</strong><small class="d-blk">1997 2004 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                            </ul>
+                                                         </li>
+                                                         <li class="lvl-1 sub-level">
+                                                            <a href="#" class="mb-2 car">
+                                                               <img src="assets/images/megamenu/911-s.png" alt="image"/>
+                                                               <span>911</span>
+                                                               <span class="float-right angle-r">
+                                                                  <!--<i class="fa-solid fa-angle-down"></i>-->
+                                                               </span>
+                                                            </a>
+                                                            <ul class="sublinks catgory">
+                                                               <li class="level2"><a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2012 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">987</strong><small class="d-blk">2005 2012 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">986</strong><small class="d-blk">1997 2004 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                            </ul>
+                                                         </li>
+                                                         <li class="lvl-1 sub-level">
+                                                            <a href="#" class="mb-2 car">
+                                                               <img src="assets/images/megamenu/cayman-s.png" alt="image"/>
+                                                               <span>Cayman</span>
+                                                               <span class="float-right angle-r">
+                                                                  <!--<i class="fa-solid fa-angle-down"></i>-->
+                                                               </span>
+                                                            </a>
+                                                            <ul class="sublinks">
+                                                               <li class="level2"><a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2012 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                            </ul>
+                                                         </li>
+                                                         <li class="lvl-1 sub-level">
+                                                            <a href="#" class="mb-2 car">
+                                                               <img src="assets/images/megamenu/macan-s.png" alt="image"/>
+                                                               <span>Macan</span>
+                                                               <span class="float-right angle-r">
+                                                                  <!--<i class="fa-solid fa-angle-down"></i>-->
+                                                               </span>
+                                                            </a>
+                                                            <ul class="sublinks">
+                                                               <li class="level2"><a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2012 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                            </ul>
+                                                         </li>
+                                                         <li class="lvl-1 sub-level">
+                                                            <a href="#" class="mb-2 car">
+                                                               <img src="assets/images/megamenu/panamera-s.png" alt="image"/>
+                                                               <span>Panamera</span>
+                                                               <span class="float-right angle-r">
+                                                                  <!--<i class="fa-solid fa-angle-down"></i>-->
+                                                               </span>
+                                                            </a>
+                                                            <ul class="sublinks">
+                                                               <li class="level2"><a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                               <li class="level2"><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2012 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                            </ul>
+                                                         </li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <!--Categories-->                                
+                                             </div>
+                                          </div>
+                                       </ul>
+                                    </li>
+                                    <!--thierd ul-->
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--logo-->
+                     <div class="logo-d">
+                        <a href="#">
+                        <img src="assets/images/logo/logo2.png" alt="logo" title="logo">
+                        </a>
+                     </div>
+                     <div class="srch00 lh-0">
+                        <div class="header-cart iconset">
+                           <ul class="mob-top-sr">
+                              <li>
+                                 <div class="iconset">
+                                    <a href="#" >
+                                       <img src="assets/fonts/icons8-bell-50.png">
+                                       <span class="wishlist-count counter d-flex-center justify-content-center position-absolute translate-middle rounded-circle">0</span>
+                                       <div class="hovr hovr12">Mes recherches</div>
+                                    </a>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="iconset">
+                                    <a href="#" class="site-header__cart btn-minicart" data-bs-toggle="modal" data-bs-target="#minicart-drawer">
+                                       <img src="assets/fonts/icons8-sms-24.png">
+                                       <div class="hovr hovr12"> Messages</div>
+                                    </a>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <!--<a href="#" class="mob-sign"><i class="fa fa-search mob-cart" aria-hidden="true"></i></a>-->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <!--Header-->
+      <div class="header-main header-12 d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+         <!--Header-->
+         <header id="header" class="header header-wrap mih-90 d-flex align-items-center">
+            <div class="container mw-100 ">
+               <div class="row align-items-center">
+                  <!--Logo / Menu Toggle-->
+                  <div class="col-6 col-sm-6 col-md-6 col-lg-1 align-self-center justify-content-start d-flex">
+                     <!--Mobile Toggle-->
+                     <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open me-3 d-lg-none"><i class="icon an an-times-l"></i><i class="icon an an-bars-l"></i></button>
+                     <!--End Mobile Toggle-->
+                     <!--Logo-->
+                     <div class="logo"><a href="#"><img class="logo-img mh-100" src="assets/images/logo/logo.png" alt="logo" title="logo" width="140" /><span class="logo-txt d-none"></span></a></div>
+                     <!--End Logo-->
+                  </div>
+                  <!--End Logo / Menu Toggle-->
+                  <!--Search Inline-->
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-6 d-none d-lg-block">
+                     <ul class="top-srch">
+                        <li>
+                           <a class="btn btn-sm btn-primary rounded px-4" href="#" ><i class="fa-solid fa-square-plus fa-plus"></i> dépose d’annonce</a>
+                        </li>
+                        <li>
+                           <a class="srch" href="#" ><i class="fa-solid fa-magnifying-glass fa-srch"></i> Rechercher</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <!--End Search Inline-->
+                  <!--Right Action-->
+                  <div class="col-6 col-sm-6 col-md-6 col-lg-5 align-self-center icons-col text-right d-flex justify-content-end">
+                     <!--Wishlist-->
+                     <div class="wishlist-link iconset">
+                        <a href="#" >
+                           <img src="assets/fonts/icons8-bell-50.png">
+                           <span class="wishlist-count counter d-flex-center justify-content-center position-absolute translate-middle rounded-circle">0</span>
+                           <div class="hovr">Mes recherches</div>
+                        </a>
+                     </div>
+                     <!--Wishlist-->
+                     <div class="wishlist-link iconset">
+                        <a href="#">
+                           <img src="assets/fonts/icons8-heart-24.png">
+                           <div class="hovr">Favoris</div>
+                        </a>
+                     </div>
+                     <!--End Wishlist-->                 
+                     <!--Minicart Drawer-->
+                     <div class="header-cart iconset">
+                        <a href="#" class="site-header__cart btn-minicart" data-bs-toggle="modal" data-bs-target="#minicart-drawer">
+                           <img src="assets/fonts/icons8-sms-24.png">
+                           <div class="hovr"> Messages</div>
+                        </a>
+                     </div>
+                     <!--End Minicart Drawer-->
+                     <!--Setting Dropdown-->
+                     <div class="user-link iconset">
+                        <img src="assets/fonts/icons8-user-24.png">
+                        <div class="hovr">Shane</div>
+                     </div>
+                     <!--End Setting Dropdown-->
+                  </div>
+                  <!--End Right Action-->
+               </div>
+            </div>
+         </header>
+         <!--End Header-->
+         <!--Main Navigation Desktop-->
+         <div class="menu-outer d-none d-lg-block">
+            <div class="container">
+               <div class="row">
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-12 align-self-center d-menu-col">
+                     <nav class="grid__item" id="AccessibleNav">
+                        <ul id="siteNav" class="site-nav medium left hidearrow">
+                           <li class="lvl1 parent megamenu">
+                              <a href="#;">Voiture  <i class="an an-angle-down-l"></i></a>
+                              <div class="megamenu style4">
+                                 <div class="row">
+                                    <div class="col-md-6 col-lg-2 p-0">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/718.jpg" data-src="assets/images/products/718.jpg" alt="image"/></a>
+                                          <p class="m-0"><a href="#" class="text-uppercase">718</a></p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/911.jpg" data-src="assets/images/products/911.jpg" alt="image"/></a>
+                                          <p class="m-0"><a href="#" class="text-uppercase">911</a></p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/taycan.jpg" data-src="assets/images/products/taycan.jpg" alt="image"/></a>
+                                          <p class="m-0"><a href="#" class="text-uppercase">Taycan</a></p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/panamera.jpg" data-src="assets/images/products/panamera.jpg" alt="image"/></a>
+                                          <p class="m-0"><a href="index-demo5.html" class="text-uppercase">Panamera</a></p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2">
+                                       <div class=" imageCol text-center">
+                                          <a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/macan.jpg" data-src="assets/images/products/macan.jpg" alt="image"/></a>
+                                          <p class="m-0"><a href="index-demo5.html" class="text-uppercase">Macan</a></p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2">
+                                       <div class=" imageCol text-center">
+                                          <a href="#" class="mb-2"><img class="lazyload" src="assets/images/products/cayenne.jpg" data-src="assets/images/products/cayenne.jpg" alt="image"/></a>
+                                          <p class="m-0"><a href="index-demo5.html" class="text-uppercase">Cayenne</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="lvl1 parent megamenu">
+                              <a href="#"> Pièces détacher <i class="an an-angle-down-l"></i></a>
+                              <div class="megamenu style1">
+                                 <div class="row">
+                                    <div class="col-md-1 col-lg-1 br p-0">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>BOXSTER</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/boxster-s.png" data-src="assets/images/megamenu/boxster-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/boxster.png" data-src="assets/images/megamenu/boxster.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2012 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">987</strong><small class="d-blk">2005 2012 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">986</strong><small class="d-blk">1997 2004 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>CAYMAN</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/cayman-s.png" data-src="assets/images/megamenu/cayman-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/cayman.png" data-src="assets/images/megamenu/cayman.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <div class="catgory1">
+                                                                  <ul class="catgory">
+                                                                     <li>
+                                                      <a href="#"><strong class="d-blk">982</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">981</strong><small class="d-blk">2013 2016 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">987</strong><small class="d-blk">2006 2012 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>911</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/911-s.png" data-src="assets/images/megamenu/911-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/911.png" data-src="assets/images/megamenu/911.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">992</strong><small class="d-blk">2019 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">991</strong><small class="d-blk">2011 2019 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">996</strong><small class="d-blk">2004 2011 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">993</strong><small class="d-blk">1998 2005 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">997</strong><small class="d-blk">1994 1998 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">964</strong><small class="d-blk">1989 1994 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">911</strong><small class="d-blk">1964 1989 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>TAYCAN</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/taycan-s.png" data-src="assets/images/megamenu/taycan-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/taycan.png" data-src="assets/images/megamenu/taycan.png" alt="image"/>															
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">9J1</strong><small class="d-blk">2019 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>																
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class="imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>PANAMERA</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/panamera-s.png" data-src="assets/images/megamenu/panamera-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/panamera.png" data-src="assets/images/megamenu/panamera.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">971</strong><small class="d-blk">2016 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">970</strong><small class="d-blk">2009 2016<i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class=" imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>MACAN</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/macan-s.png" data-src="assets/images/megamenu/macan-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/macan.png" data-src="assets/images/megamenu/macan.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">95B</strong><small class="d-blk">2014 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class=" imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>CAYENNE</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/cayman-s.png" data-src="assets/images/megamenu/cayman-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/cayman.png" data-src="assets/images/megamenu/cayman.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">9Y0</strong><small class="d-blk">2018 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">958</strong><small class="d-blk">2010 2017 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">995</strong><small class="d-blk">2003 2010 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class=" imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>OTHER 	PORSCHE</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/spyder-s.png" data-src="assets/images/megamenu/spyder-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/spyder.png" data-src="assets/images/megamenu/spyder.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">356</strong><small class="d-blk">1950 1964 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">914</strong><small class="d-blk">1970 1976<i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">924</strong><small class="d-blk">1976 1988<i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">928</strong><small class="d-blk">1978 1995 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">944</strong><small class="d-blk">1982 1991 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">968</strong><small class="d-blk">1992 1995 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">980</strong><small class="d-blk">2004 2006 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">918</strong><small class="d-blk">2014 2015 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 p-0">
+                                       <div class=" imageCol text-center">
+                                          <a href="#" class="mb-2 car">
+                                             <h6>OTHER BRANDS</h6>
+                                             <img class="lazyload car1" src="assets/images/megamenu/other-s.png" data-src="assets/images/megamenu/other-s.png" alt="image"/>
+                                             <img class="lazyload car2" src="assets/images/megamenu/other.png" data-src="assets/images/megamenu/other.png" alt="image"/>
+                                          </a>
+                                          <div class="car-models text-left">
+                                             <div class="dropdown-menu-container">
+                                                <ul class="list-unstyled list-reversed">
+                                                   <li>
+                                                      <a class="active-model-check" href="#">
+                                                         <div class="cars-menu-margin">
+                                                            <div>
+                                                               <ul class="catgory">
+                                                                  <li>
+                                                      <a href="#"><strong class="d-blk">992</strong><small class="d-blk">2019 Today <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">991</strong><small class="d-blk">2011 2019 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">996</strong><small class="d-blk">2004 2011 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">993</strong><small class="d-blk">1998 2005 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">997</strong><small class="d-blk">1994 1998 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">964</strong><small class="d-blk">1989 1994 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      <li><a href="#"><strong class="d-blk">911</strong><small class="d-blk">1964 1989 <i class="fa fa-arrow-right arow "aria-hidden="true"></i> <i class="fa fa-arrow-left arowl"aria-hidden="true"></i></small></a></li>
+                                                      </ul>
+                                                      </div>
+                                                      </div>
+                                                      </a>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--End Main Navigation Desktop-->
+      </div>
+      <!--End Header-->
+      <!--Body Container-->
+      <div id="page-content " class="mob-pt-0">
+         <!--Breadcrumbs-->
+         <!--<div class="breadcrumbs-wrapper text-uppercase">
+            <div class="container">
+                <div class="breadcrumbs"><a href="index.html" title="Back to the home page">Home</a><span>|</span><span class="fw-bold">Product Layout Style2</span></div>
+            </div>
+            </div>-->
+         <!--End Breadcrumbs-->
+         <div class="container p-0">
+            <div class="row d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+               <div class="breadcrumbs-wrapper text-uppercase bread-crum">
+                  <div class="container p-0">
+                     <div class="breadcrumbs">
+                        <div id="nav-gwbar" class="nav-gwbar-single-row nav-genz nav-gwbar-white nav-gwbar-scroll">
+                           <a href="#" class="nav-a nav-a1">Annonces</a> <i class="fa-solid fa-angle-right lh-30"></i>
+                           <a href="#" class="nav-a nav-a1">Tranactions</a> <i class="fa-solid fa-angle-right lh-30"></i>
+                           <a href="#" class="nav-a nav-a1">Acheter des crédits</a> <i class="fa-solid fa-angle-right lh-30"></i>
+                           <a href="#" class="nav-a nav-a1">Paramètres</a> <i class="fa-solid fa-angle-right lh-30"></i>
+                           <span class="detal-spn">Peugeot 208 1.5 BlueHDi 100ch S&S Allure</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="product-single">
+               <div class="row">
+                  <div class="col-lg-8 col-md-12 col-sm-12 col-12 p-0 d-block d-xs-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
+                     <div class="product-details-img thumb-left d-flex-wrap mb-md-0 position-relative">
+                        <!-- <div class="zoompro-wrap product-zoom-right">-->
+                        <div class="">
+                           <div class="zoompro-span"><img id="zoompro" class="zoompro" src="assets/images/products/product-2.jpg" data-zoom-image="assets/images/products/product-2.jpg" alt="product"></div>
+                           <div class="product-labels">
+                              <!--<span class="lbl pr-label1">new</span>-->
+                              <a class="btn rounded-0 btn-icon " href="javascript:void(0)" data-toggle="modal" data-target="#content_quickview" tabindex="0" style="width: 100% !important;height: 31px; border-radius: 50px !important;"> <i class="fa-solid fa-camera"></i> <span class="pl-10">1/10</span> 
+                              </a>
+                           </div>
+                           <div class="product-wish">
+                              <a class="wishIcon wishlist rounded m-0" href="#"><i class="fa-solid fa-arrow-left"></i><span class="tooltip-label left"></span></a>
+                           </div>
+                           <div class="product-buttons">
+                              <a href="#" class="mfpbox mfp-with-anim btn rounded "><i class="fa-solid fa-share-nodes"></i><span class="tooltip-label"></span></a>
+                              <a href="#" class="btn rounded prlightbox hrt-an"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--Main Content-->
+         <div class="container">
+            <!--Product Content-->
+            <div class="product-single">
+               <div class="row">
+                  <p></p>
+                  <div class="col-lg-8 col-md-6 col-sm-12 col-12 d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+                     <div class="product-details-img product-horizontal-style clearfix mb-3 mb-md-0">
+                        <div class="zoompro-wrap product-zoom-right w-100 p-0">
+                           <div class="zoompro-span product-single-style2 no-arrow">
+                              <a class="btn rounded-0 btn-icon quick-view-popup quick-view d-none d-sm-none d-md-none d-lg-block" href="javascript:void(0)" data-toggle="modal" data-target="#content_quickview" tabindex="0">
+                              <img id="" class="" src="assets/images/products/product-2.jpg"  alt="product" />
+                              </a>
+                              <a class="btn rounded-0 btn-icon quick-view-popup quick-view d-none d-sm-none d-md-none d-lg-block" href="javascript:void(0)" data-toggle="modal" data-target="#content_quickview" tabindex="0">
+                              <img class="" src="assets/images/products/product-2.jpg" alt="product" />
+                              </a>
+                              <a href="">										
+                              <img class="" src="assets/images/products/product-2.jpg" alt="product" />
+                              </a>
+                           </div>
+                           <div class="product-buttons1" style="">
+                              <a class="btn rounded-0 btn-icon quick-view-popup quick-view quick-btn" href="javascript:void(0)" data-toggle="modal" data-target="#content_quickview" tabindex="0" style="width: 100% !important;height: 31px; border-radius: 50px !important;">Voir les 10 photos
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+                     <div class="wrap-product-info-bg wrap-pro p-20">
+                        <div class="col-md-12 text-left">
+                           <a href="#"><img src="assets/images/logo/icons8-user-100.png" width=""></a>
+                           <!--<span><i class="fa-solid fa-plus spn-pluss"></i>span>-->
+                           <span class="usr-name"><a href="#">Name</a></span>
+                           <span class="float-right spn-angl"><a href="#"><i class="fa-solid fa-angle-right"></i></a></span>
+                           <hr>
+                           <p><i class="fa-solid fa-clock"></i><small> Répond généralement en 10 minutes</small></p>
+                           <button class="btn btn-side side-btn1"><i class="fa-solid fa-envelope padd-r"></i> Envoyer un message</button>
+                           <button class="btn btn-side side-btn2"><i class="fa-solid fa-phone padd-r"></i> Voir le numéro</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-8 col-md-6 col-sm-12 col-12">
+                     <h1 class="m-b-8">Peugeot 406 break</h1>
+                     <p class="m-b-8"><span>Saint-Rémy-sur-Avre</span> <span>• 2001</span> <span> • 415,000 km</span> <span> • Diesel</span></p>
+                     <span class="spn-price">700 <i class="fa-solid fa-euro-sign"></i></span>
+                     <!--<span class="secure-pay">Paiement sécurisé</span>-->
+                     <hr>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-8 main-col">
+                     <!--Toolbar-->
+                     <div class="toolbar mt-0">
+                        <h2>Critères</h2>
+                     </div>
+                     <!--End Toolbar-->
+                     <!--Product Grid-->
+                     <div class="grid-products grid--view-items prd-grid">
+                        <div class="row">
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <!--Start Product Details-->
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/2.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Marque</span>
+                                       </p>
+                                       <p class="">Peugeot</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--End Product Details-->
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/3.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Modèle</span>
+                                       </p>
+                                       <p class="">406</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>--><img src="assets/images/slideshow/4.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt">Année-modèle</p>
+                                       <p class="second-txt">2001</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/4.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Mise en circulation</span>
+                                       </p>
+                                       <p class="">7/2021</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/6.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Kilométrage</span>
+                                       </p>
+                                       <p class="">41,5000 KM</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/Group 599.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Carburant</span>
+                                       </p>
+                                       <p class="">Diesel</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/11.png" class="txt-icon">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Boîte de vitesse</span>
+                                       </p>
+                                       <p class="">Manuelle</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/3.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Type de véhicule</span>
+                                       </p>
+                                       <p class="">Break</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/16.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Couleur</span>
+                                       </p>
+                                       <p class="">Autre</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>--><img src="assets/images/slideshow/5.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Nombre de portes</span>
+                                       </p>
+                                       <p class=" ">5</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/18.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Nombre de place(s)</span>
+                                       </p>
+                                       <p class="">5</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/Group 600.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Puissance fiscale</span>
+                                       </p>
+                                       <p class="">6 Cv</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/Group 602.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Puissance DIN</span>
+                                       </p>
+                                       <p class="">110 Ch</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-sm-6 col-md-4 col-lg-4 p-0">
+                              <div class="product-details">
+                                 <!--Product Name-->
+                                 <div class="product-name pb-0">
+                                    <span class="float-left img-spn">
+                                       <!--<i class="fa-solid fa-gas-pump txt-icon"></i>-->
+                                       <img src="assets/images/slideshow/10.png" class="txt-icon">
+                                    </span>
+                                    <div class="side-txt">
+                                       <p class="first-txt"><span>Permis</span>
+                                       </p>
+                                       <p class="">Avec permis</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--End Product Grid-->
+                     <!--Pagination Classic-->
+                     <hr class="clear">
+                     <!--Collection Description-->
+                     <div class="collection-description mt-4 pt-0">
+                        <h2>Description</h2>
+                        <p class="fw-400">Bmw SERIE 1 (F21/F20) 114D 95CH M SPORT ULTIMATE 3P EURO6C, BLANC, 5cv, 3 portes, mise en circulation le 25-07-2018, garantie 6 mois.</p>
+                        <br>
+                        <p class="fw-400">5 places, longueur : 4,33 mètres,<br>
+                           boîte de vitesse : manuelle
+                        </p>
+                        <br>
+                        <p class="fw-400">OPTIONS ET EQUIPEMENTS :<br>
+                           Audio - Télécommunications<br>
+                           - 6 Haut parleurs<br>
+                           - Appel d'Assistance Localisé<br>
+                           - Appel d'Urgence Localisé<br>
+                           - Commandes du système audio au volant
+                        </p>
+                        <a href="#" class="voir"><u>Voir plus</u></a>
+                     </div>
+                     <hr class="clear">
+                     <div class="collection-description pt-2 collect-des mt-0">
+                        <h2 class="second-h pt-0">Paiement sécurisé avec</h2>
+                        <p>Vous virez l’argent sur votre compte leboncoin.
+                           Le véhicule vous plait ? Vous payez le vendeur en un clic et repartez avec le véhicule.
+                           Sinon, vous récupérez vos fonds. <strong>Tout cela gratuitement !</strong>
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-right"></i> Plus d’informations sur le paiement sécurisé</a>
+                     </div>
+                     <hr>
+                     <div class="collection-description mt-4 pt-0">
+                        <h2 class="">
+                        Brignoles(83170)</h3>
+                        <div>
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11376654.143867694!2d-6.932249111537563!3d45.881243114560725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2sFrance!5e0!3m2!1sen!2sin!4v1653984321758!5m2!1sen!2sin" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                     </div>
+                     <div class="collection-description mt-4 pt-2">
+                        <img class="float-left" src="assets/images/logo/icons8-user-100.png" width="90">
+                        <div class="usr-namm">
+                           <span><strong>TASIE</strong></span>
+                           <p>3 annonces</p>
+                        </div>
+                        <button class="btn float-right btnnam">Suivre</button>
+                        <div class="clearfix"></div>
+                        <p class="m-b-5"><i class="fa-solid fa-user p-r-5"></i> Membre depuis mars 2020</p>
+                        <p class="m-b-5"><i class="fa-solid fa-clock p-r-5"></i> Répond généralement en 10 minutes</p>
+                     </div>
+                     <!--<div class="collection-description mt-4 pt-2">
+                        <a href="#" class="ankr"><i class="fa-solid fa-flag p-r-5"></i> Signaler l’annonce</a>
+                        <a href="#" class="ankr"><i class="fa-solid fa-circle-exclamation p-r-5"></i> Vos droits et obligations</a>
+                        </div>
+                        <hr>
+                        <h4>Prix moyen L’argus<sup>TM</sup></h4>
+                        <p>Les prix moyens constatés sur le marché de ce véhicule se situent entre</p>
+                        <div class="col-12 col-lg-3"><div width="28.8rem" class="sc-bdVaJa xkXBN">
+                        <p class="_1pHkp _21rqc _2B7ck _137P- _3j0OU P4PEa">
+                        <span class="_1hnil _35DXM _1-TTU">484 €</span>
+                        <span class="_1hnil _35DXM _1-TTU">535 €</span>
+                        </p>
+                        <div display="flex" class="sc-bdVaJa krCuDX">
+                        <div class="sc-kNBZmU liCYrV"></div>
+                        <div class="sc-kNBZmU liCYrV"></div>
+                        </div>
+                        <p class="_2TX6E _21rqc _2B7ck _137P- _3j0OU P4PEa">
+                        <span class="Dqdzf _3j0OU cJtdT">Moyenne basse</span>
+                        <span class="Dqdzf _3j0OU cJtdT">Moyenne haute</span>
+                        </p>
+                        </div></div>
+                        <p>Vous souhaitez faire reprendre votre véhicule par un pro ? <a href="#">Consultez la Cote Argus Reprise</a></p>-->
+                     <!--End Collection Description-->
+                  </div>
+               </div>
+            </div>
+            <!--Product Content-->
+            <section class="section product-slider pb-0 col-12 col-lg-8">
+               <div class="p-0">
+                  <hr>
+                  <div class="row">
+                     <div class="section-header col-12">
+                        <h2 class="text-transform-none">Ces annonces peuvent vous intéresser</h2>
+                     </div>
+                  </div>
+                  <div class="productSlider grid-products">
+                     <div class="item">
+                        <!--Start Product Image-->
+                        <div class="product-image">
+                           <!--Start Product Image-->
+                           <a href="#" class="product-img">
+                              <!-- image -->
+                              <img  src="assets/images/products/01-7-510x270.jpg" alt="" title="">
+                              <!-- End image -->
+                              <!-- product label -->
+                              <div class="product-labels"><span class="lbl on-sale rounded"><i class="fa-solid fa-camera"></i> 10</span></div>
+                              <!-- End product label -->
+                           </a>
+                           <!--End Product Image-->
+                        </div>
+                        <!--End Product Image-->
+                        <!--Start Product Details-->
+                        <div class="product-details text-left pro-detal">
+                           <!-- product name -->
+                           <div class="product-name pb-0">
+                              <a href="#" tabindex="0">
+                                 <strong>
+                                    <h5 class="mb-0">BMW série 320d xdrive 2.0 190ch Sport</h5>
+                                 </strong>
+                              </a>
+                           </div>
+                           <!-- End product name -->
+                           <!-- product price -->
+                           <div class="product-price">
+                              <span class="">
+                                 <h5 class="mb-0">20 238 <i class="fa-solid fa-euro-sign"></i></h5>
+                              </span>
+                              <p class="m-b-5"><span class="secure-pay1">Paiement sécurisé</span></p>
+                           </div>
+                           <!-- End product price -->
+                           <!--Product Review-->
+                           <div class="product-review">
+                              <div class="position-relative">
+                                 <a href="#" tabindex="0" class="hrt-side">Automatique 67000</a>
+                                 <a href="#" class="hrt-an" tabindex="0"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a> 
+                              </div>
+                           </div>
+                           <!--End Product Review-->
+                        </div>
+                        <!--End Product Details-->
+                     </div>
+                     <div class="item">
+                        <!--Start Product Image-->
+                        <div class="product-image">
+                           <!--Start Product Image-->
+                           <a href="#" class="product-img">
+                              <!-- image -->
+                              <img  src="assets/images/products/01-7-510x270.jpg" alt="" title="">
+                              <!-- End image -->
+                              <!-- product label -->
+                              <div class="product-labels"><span class="lbl on-sale rounded"><i class="fa-solid fa-camera"></i> 10</span></div>
+                              <!-- End product label -->
+                           </a>
+                           <!--End Product Image-->
+                        </div>
+                        <!--End Product Image-->
+                        <!--Start Product Details-->
+                        <div class="product-details text-left pro-detal">
+                           <!-- product name -->
+                           <div class="product-name pb-0">
+                              <a href="#" tabindex="0">
+                                 <strong>
+                                    <h5 class="mb-0">BMW série 320d xdrive 2.0 190ch Sport</h5>
+                                 </strong>
+                              </a>
+                           </div>
+                           <!-- End product name -->
+                           <!-- product price -->
+                           <div class="product-price">
+                              <span class="">
+                                 <h5 class="mb-0">20 238 <i class="fa-solid fa-euro-sign"></i></h5>
+                              </span>
+                              <p class="m-b-5"><span class="secure-pay1">Paiement sécurisé</span></p>
+                           </div>
+                           <!-- End product price -->
+                           <!--Product Review-->
+                           <div class="product-review">
+                              <div class="position-relative">
+                                 <a href="#" tabindex="0" class="hrt-side">Automatique 67000</a>
+                                 <a href="#" class="hrt-an" tabindex="0"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a> 
+                              </div>
+                           </div>
+                           <!--End Product Review-->
+                        </div>
+                        <!--End Product Details-->
+                     </div>
+                     <div class="item">
+                        <!--Start Product Image-->
+                        <div class="product-image">
+                           <!--Start Product Image-->
+                           <a href="#" class="product-img">
+                              <!-- image -->
+                              <img  src="assets/images/products/01-7-510x270.jpg" alt="" title="">
+                              <!-- End image -->
+                              <!-- product label -->
+                              <div class="product-labels"><span class="lbl on-sale rounded"><i class="fa-solid fa-camera"></i> 10</span></div>
+                              <!-- End product label -->
+                           </a>
+                           <!--End Product Image-->
+                        </div>
+                        <!--End Product Image-->
+                        <!--Start Product Details-->
+                        <div class="product-details text-left pro-detal">
+                           <!-- product name -->
+                           <div class="product-name pb-0">
+                              <a href="#" tabindex="0">
+                                 <strong>
+                                    <h5 class="mb-0">BMW série 320d xdrive 2.0 190ch Sport</h5>
+                                 </strong>
+                              </a>
+                           </div>
+                           <!-- End product name -->
+                           <!-- product price -->
+                           <div class="product-price">
+                              <span class="">
+                                 <h5 class="mb-0">20 238 <i class="fa-solid fa-euro-sign"></i></h5>
+                              </span>
+                              <p class="m-b-5"><span class="secure-pay1">Paiement sécurisé</span></p>
+                           </div>
+                           <!-- End product price -->
+                           <!--Product Review-->
+                           <div class="product-review">
+                              <div class="position-relative">
+                                 <a href="#" tabindex="0" class="hrt-side">Automatique 67000</a>
+                                 <a href="#" class="hrt-an" tabindex="0"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a> 
+                              </div>
+                           </div>
+                           <!--End Product Review-->
+                        </div>
+                        <!--End Product Details-->
+                     </div>
+                     <div class="item">
+                        <!--Start Product Image-->
+                        <div class="product-image">
+                           <!--Start Product Image-->
+                           <a href="#" class="product-img">
+                              <!-- image -->
+                              <img  src="assets/images/products/01-7-510x270.jpg" alt="" title="">
+                              <!-- End image -->
+                              <!-- product label -->
+                              <div class="product-labels"><span class="lbl on-sale rounded"><i class="fa-solid fa-camera"></i> 10</span></div>
+                              <!-- End product label -->
+                           </a>
+                           <!--End Product Image-->
+                        </div>
+                        <!--End Product Image-->
+                        <!--Start Product Details-->
+                        <div class="product-details text-left pro-detal">
+                           <!-- product name -->
+                           <div class="product-name pb-0">
+                              <a href="#" tabindex="0">
+                                 <strong>
+                                    <h5 class="mb-0">BMW série 320d xdrive 2.0 190ch Sport</h5>
+                                 </strong>
+                              </a>
+                           </div>
+                           <!-- End product name -->
+                           <!-- product price -->
+                           <div class="product-price">
+                              <span class="">
+                                 <h5 class="mb-0">20 238 <i class="fa-solid fa-euro-sign"></i></h5>
+                              </span>
+                              <p class="m-b-5"><span class="secure-pay1">Paiement sécurisé</span></p>
+                           </div>
+                           <!-- End product price -->
+                           <!--Product Review-->
+                           <div class="product-review">
+                              <div class="position-relative">
+                                 <a href="#" tabindex="0" class="hrt-side">Automatique 67000</a>
+                                 <a href="#" class="hrt-an" tabindex="0"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a> 
+                              </div>
+                           </div>
+                           <!--End Product Review-->
+                        </div>
+                        <!--End Product Details-->
+                     </div>
+                     <div class="item">
+                        <!--Start Product Image-->
+                        <div class="product-image">
+                           <!--Start Product Image-->
+                           <a href="#" class="product-img">
+                              <!-- image -->
+                              <img  src="assets/images/products/01-7-510x270.jpg" alt="" title="">
+                              <!-- End image -->
+                              <!-- product label -->
+                              <div class="product-labels"><span class="lbl on-sale rounded"><i class="fa-solid fa-camera"></i> 10</span></div>
+                              <!-- End product label -->
+                           </a>
+                           <!--End Product Image-->
+                        </div>
+                        <!--End Product Image-->
+                        <!--Start Product Details-->
+                        <div class="product-details text-left pro-detal">
+                           <!-- product name -->
+                           <div class="product-name pb-0">
+                              <a href="#" tabindex="0">
+                                 <strong>
+                                    <h5 class="mb-0">BMW série 320d xdrive 2.0 190ch Sport</h5>
+                                 </strong>
+                              </a>
+                           </div>
+                           <!-- End product name -->
+                           <!-- product price -->
+                           <div class="product-price">
+                              <span class="">
+                                 <h5 class="mb-0">20 238 <i class="fa-solid fa-euro-sign"></i></h5>
+                              </span>
+                              <p class="m-b-5"><span class="secure-pay1">Paiement sécurisé</span></p>
+                           </div>
+                           <!-- End product price -->
+                           <!--Product Review-->
+                           <div class="product-review">
+                              <div class="position-relative">
+                                 <a href="#" tabindex="0" class="hrt-side">Automatique 67000</a>
+                                 <a href="#" class="hrt-an" tabindex="0"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a> 
+                              </div>
+                           </div>
+                           <!--End Product Review-->
+                        </div>
+                        <!--End Product Details-->
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <!--End Container-->
+      </div>
+      <!--End Body Container-->
+      <!--Footer-->
+      <div class="footer footer-12">
+         <div class="footer-top clearfix">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-3 footer-about">
+                     <div class="inner mb-4 mb-md-0">
+                        <!-- <img src="assets/images/logo/logo.png" alt="Optimal" class="mb-3" width="100" /> -->
+                        <div class="custom-text mt-1">
+                           <h4 class="h4 body-font text-white">NOS APPLICATIONS</h4>
+                           <ul class="list-inline social-icons mt-3">
+                              <li class="list-inline-item mb-3">
+                                 <a href="#">
+                                 <img src="assets/images/icons/download_on_app_store.avif" width="135">
+                                 </a>
+                              </li>
+                              <li class="list-inline-item">
+                                 <a href="#">
+                                 <img src="assets/images/icons/download_on_google_play.avif" width="135">
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                     <h4 class="h4 body-font text-white">INFORMATION JURIDIQUE</h4>
+                     <ul>
+                        <li><a href="my-account.html">Règles de diffusion</a></li>
+                        <li><a href="aboutus-style1.html">Informations légales</a></li>
+                        <li><a href="login.html">CGU</a></li>
+                        <li><a href="privacy-policy.html">CGV</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                     <h4 class="h4 body-font text-white">À PROPOS DE</h4>
+                     <ul>
+                        <li><a href="#">Informations personnelles et Cookies</a></li>
+                        <li><a href="#">Nous contacter</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-3 newsletter-col">
+                     <div class="display-table pt-md-3 pt-lg-0">
+                        <div class="display-table-cell footer-newsletter">
+                           <h4 class="h4 body-font text-white">NOS APS</h4>
+                           <form action="#" method="post">
+                              <div class="lng_dropdown mr-2">
+                                 <select name="countries" class="custome_select">
+                                    <option value='en' data-image="assets/images/icons/eng.png" data-title="English">English</option>
+                                    <option value='fn' data-image="assets/images/icons/fn.png" data-title="France">France</option>
+                                    <option value='us' data-image="assets/images/icons/us.png" data-title="United States">United States</option>
+                                 </select>
+                              </div>
+                           </form>
+                           <ul class="list-inline social-icons mt-3 social">
+                              <li class="list-inline-item"><a href="#" class="facbook" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                              <li class="list-inline-item"><a href="#" class="twitr" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                              <li class="list-inline-item"><a href="#" class="insta" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                              <li class="list-inline-item"><a href="#" class="gmal" data-bs-toggle="tooltip" data-bs-placement="top" title="Google plus"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="footer footer-4 m-t-0">
+            <div class="footer-bottom clearfix">
+               <div class="container bt-1">
+                  <div class="d-flexflex-column justify-content-md-between py-3">
+                     <div class="copytext">© 2022. Tous droits réservés.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--End Footer-->
+         <!--Scoll Top-->
+         <span id="site-scroll" class="textbase" title="SCROLL UP"> <i class="an an-long-arrow-alt-right top-arrow" aria-hidden="true"></i></span>
+         <!--End Scoll Top-->
+         <!--End MiniCart Drawer-->
+         <div class="modalOverly"></div>
+         <!--Scoll Top-->
+         <span id="site-scroll"><i class="icon an an-chevron-up"></i></span>
+         <!--End Scoll Top-->
+         <!--End MiniCart Drawer-->
+         <div class="modalOverly"></div>
+         <!-- Sticky Cart -->
+         <div class="stickyCart">
+            <div class="container">
+               <form method="post" action="#" id="stickycart-form" class="d-flex-center justify-content-center">
+                  <div class="img"><img src="assets/images/products/product-2.jpg" class="product-featured-img" alt="product" />
+                     <span class="position-a fw-700">Renault Clio LIMITED 1.5 dCi FAP Energy eco2 S&S 90 cv</span>
+                     <span class="price-hrt1">50000 <i class="fa-solid fa-euro-sign"></i>
+                     <a href="#" class="hrt-an" tabindex="0"><span><i class="fa-solid fa-heart d-n"></i><i class="icon an an-heart-l h-n"></i></span></a></span>
+                  </div>
+                  <br>
+               </form>
+            </div>
+         </div>
+         <!-- End Sticky Cart -->
+         <!--Quickview Popup-->
+         <div class="loadingBox">
+            <div class="an-spin"><i class="icon an an-spinner4"></i></div>
+         </div>
+         <div id="quickView-modal" class="mfp-with-anim mfp-hide quick-modl " style="height: inherit;">
+            <button title="Close (Esc)" type="button" class="mfp-close fs-25">×</button>
+            <div class="row">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3 mb-md-0">
+                  <!--Model thumbnail -->
+                  <div id="quickView" class="carousel slide">
+                     <!-- Image Slide carousel items -->
+                     <div class="row pt-100">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3 mb-md-0">
+                           <div class="carousel-inner carosl-inr">
+                              <div class="item carousel-item active" data-bs-slide-number="0">
+                                 <img class="blur-up lazyload" data-src="assets/images/products/car-item11.jpg" src="assets/images/products/car-item11.jpg" alt="image" title="" />
+                              </div>
+                              <div class="item carousel-item" data-bs-slide-number="1">
+                                 <img class="blur-up lazyload" data-src="assets/images/products/car-item12.jpg" src="assets/images/products/car-item11.jpg" alt="image" title="" />
+                              </div>
+                              <div class="item carousel-item" data-bs-slide-number="2">
+                                 <img class="blur-up lazyload" data-src="assets/images/products/car-item11.jpg" src="assets/images/products/car-item11.jpg" alt="image" title="" />
+                              </div>
+                              <div class="item carousel-item" data-bs-slide-number="3">
+                                 <img class="blur-up lazyload" data-src="assets/images/products/car-item12.jpg" src="assets/images/products/car-item12.jpg" alt="image" title="" />
+                              </div>
+                              <div class="item carousel-item" data-bs-slide-number="4">
+                                 <img class="blur-up lazyload" data-src="assets/images/products/car-item11.jpg" src="assets/images/products/car-item11.jpg" alt="image" title="" />
+                              </div>
+                              <a class="carousel-control-prev carousel-arrow" href="#quickView" data-bs-target="#quickView" data-bs-slide="prev"><i class="icon an-3x an an-angle-left detail-i"></i><span class="visually-hidden">Previous</span></a>
+                              <a class="carousel-control-next carousel-arrow" href="#quickView" data-bs-target="#quickView" data-bs-slide="next"><i class="icon an-3x an an-angle-right detail-i"></i><span class="visually-hidden">Next</span></a>
+                           </div>
+                        </div>
+                        <!-- End Image Slide carousel items -->
+                        <!-- Thumbnail image -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3 mb-md-0 pt-50">
+                           <h2 class="product-title">Mercedes Classe B180</h2>
+                           <div class="model-thumbnail-img model-thum-img">
+                              <!-- Thumbnail slide -->
+                              <div class="carousel-indicators list-inline">
+                                 <div class="list-inline-item active" id="carousel-selector-0" data-bs-slide-to="0" data-bs-target="#quickView">
+                                    <img class="blur-up lazyload" data-src="assets/images/products/car-item11.jpg" src="assets/images/products/car-item11.jpg" alt="image" title="" />
+                                 </div>
+                                 <div class="list-inline-item" id="carousel-selector-1" data-bs-slide-to="1" data-bs-target="#quickView">
+                                    <img class="blur-up lazyload" data-src="assets/images/products/car-item12.jpg" src="assets/images/products/car-item12.jpg" alt="image" title="" />
+                                 </div>
+                                 <div class="list-inline-item" id="carousel-selector-2" data-bs-slide-to="2" data-bs-target="#quickView">
+                                    <img class="blur-up lazyload" data-src="assets/images/products/car-item11.jpg" src="assets/images/products/car-item11.jpg" alt="image" title="" />
+                                 </div>
+                                 <div class="list-inline-item" id="carousel-selector-3" data-bs-slide-to="3" data-bs-target="#quickView">
+                                    <img class="blur-up lazyload" data-src="assets/images/products/car-item12.jpg" src="assets/images/products/car-item12.jpg" alt="image" title="" />
+                                 </div>
+                                 <div class="list-inline-item" id="carousel-selector-4" data-bs-slide-to="4" data-bs-target="#quickView">
+                                    <img class="blur-up lazyload" data-src="assets/images/products/car-item11.jpg" src="assets/images/products/product-5-4.jpg" alt="image" title="" />
+                                 </div>
+                              </div>
+                              <!-- End Thumbnail slide -->
+                              <!-- End Carousel arrow button -->
+                           </div>
+                        </div>
+                     </div>
+                     <!-- End Thumbnail image -->
+                  </div>
+                  <!--End Model thumbnail -->
+               </div>
+            </div>
+         </div>
+         <!--End Quickview Popup-->
+         <script src="assets/js/jquery-min.js"></script>
+         <!--<script src="assets/js/bootstrap.min.js"></script>-->
+         <script src="assets/js/js.cookie.js"></script>
+         <!--Including Javascript-->
+         <script src="assets/js/plugins.js"></script>
+         <script src="assets/js/main.js"></script>
+         <script src="assets/js/photoswipe.min.js"></script>           
+         <script>
+            $(function () {
+                var $pswp = $('.pswp')[0],
+                        image = [],
+                        getItems = function () {
+                            var items = [];
+                            $('.lightboximages a').each(function () {
+                                var $href = $(this).attr('href'),
+                                        $size = $(this).data('size').split('x'),
+                                        item = {
+                                            src: $href,
+                                            w: $size[0],
+                                            h: $size[1]
+                                        };
+                                items.push(item);
+                            });
+                            return items;
+                        };
+                var items = getItems();
+            
+                $.each(items, function (index, value) {
+                    image[index] = new Image();
+                    image[index].src = value['src'];
+                });
+                $('.prlightbox').on('click', function (event) {
+                    event.preventDefault();
+            
+                    var $index = $(".active-thumb").parent().attr('data-slick-index');
+                    $index++;
+                    $index = $index - 1;
+            
+                    var options = {
+                        index: $index,
+                        bgOpacity: 0.7,
+                        showHideOpacity: true
+                    };
+                    var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                    lightBox.init();
+                });
+            });
+         </script>
+         <!--<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+               <div class="pswp__container">
+                  <div class="pswp__item"></div>
+                  <div class="pswp__item"></div>
+                  <div class="pswp__item"></div>
+               </div>
+               <div class="pswp__ui pswp__ui--hidden">
+                  <div class="pswp__top-bar">
+                     <div class="pswp__counter"></div>
+                     <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                     <button class="pswp__button pswp__button--share" title="Share"></button>
+                     <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                     <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                     <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                           <div class="pswp__preloader__cut">
+                              <div class="pswp__preloader__donut"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                     <div class="pswp__share-tooltip"></div>
+                  </div>
+                  <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                  <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                  <div class="pswp__caption">
+                     <div class="pswp__caption__center"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>-->
+      <!--End Page Wrapper-->
+   </body>
+</html>
