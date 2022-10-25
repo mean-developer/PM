@@ -44,7 +44,7 @@
 }
 
 .selector-item_radio:checked+.selector-item_label {
-    background-color: #f00;
+    background-color: #f00; 
     color: #fff !important;
     border-color: #f00;
 }

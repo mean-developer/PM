@@ -21,6 +21,7 @@ import { SpamComponent } from './spam/spam.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    
   
     BrowserAnimationsModule
   ],
